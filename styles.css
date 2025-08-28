@@ -236,8 +236,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive styles */
-/* Fix mobile dropdown alignment */
+
 @media screen and (max-width: 968px) {
     .dropdown {
         width: 100%;
@@ -276,8 +275,7 @@ body {
     from { opacity: 0; max-height: 0; }
     to { opacity: 1; max-height: 300px; }
 }
-/* Desktop dropdown animation */
-/* Desktop dropdown animation */
+
 @media screen and (min-width: 969px) {
     .dropdown-content {
         display: none;
@@ -900,170 +898,6 @@ body {
         padding: 60px 15px;
     }
 }
-/* See The Energy Section */
-.energy-section {
-    padding: 100px 20px;
-    background-color: #000;
-}
-
-.video-presentation {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.video-container {
-    position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    background: #000;
-}
-
-.video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-}
-
-.video-container:hover video {
-    opacity: 1;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(18, 18, 18, 0.7) 0%, rgba(255, 77, 90, 0.2) 100%);
-    z-index: 1;
-}
-
-.play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.play-icon svg {
-    width: 30px;
-    height: 30px;
-    color: white;
-    margin-left: 5px;
-}
-
-.play-icon:hover {
-    background: rgba(255, 77, 90, 0.8);
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.video-controls {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    z-index: 3;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.video-container:hover .video-controls {
-    opacity: 1;
-}
-
-.control-btn {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-}
-
-.control-btn:hover {
-    color: #ff4d5a;
-}
-
-#progress-bar {
-    flex-grow: 1;
-    height: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    outline: none;
-    -webkit-appearance: none;
-}
-
-#progress-bar::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #ff4d5a;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.video-highlights {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-.highlight-item {
-    text-align: center;
-    padding: 1.5rem;
-    background: var(--dark-secondary);
-    border-radius: 8px;
-    min-width: 200px;
-    margin: 0.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.highlight-item:hover {
-    transform: translateY(-5px);
-}
-
-.highlight-number {
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-}
-
-.highlight-text {
-    font-size: 1rem;
-    color: var(--text-secondary);
-}
-
-
 
 /* thumbnail  */
 .youtube-cards-section {
@@ -1084,15 +918,6 @@ body {
     width: 100%;
 }
 
-/* .section-subtitle {
-    color: #ff4d4d;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    display: block;
-} */
 
 .video-cards-container {
     display: flex;
@@ -1105,7 +930,7 @@ body {
 
 .video-card {
     width: 330px;
-    height: 330px;
+    height: 300px;
     background: #252525;
     border-radius: 12px;
     overflow: hidden;
