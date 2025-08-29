@@ -23,9 +23,9 @@
     <style>
         /* Semi-Classical Page Specific Styles */
         :root {
-            --primary-purple: #8a2be2;
-            --purple-light: #9b4de3;
-            --purple-dark: #6a1cb9;
+            --primary-color: rgba(250, 23, 244, 0.8);
+            --primary-light: rgba(250, 23, 244, 0.6);
+            --primary-dark: rgba(250, 23, 244, 1);
             --dark-bg: #121212;
             --dark-card: #1e1e1e;
             --text-light: #f8f8f8;
@@ -46,16 +46,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-        }
-        
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1547153760-73fcb6c9bf53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
-            z-index: -1;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.9), rgba(30, 30, 30, 0.9));
         }
         
         .hero-content {
@@ -68,12 +59,12 @@
         .hero-content h1 {
             font-family: 'Playfair', serif;
             font-size: 4rem;
-            /* margin-bottom: 1rem; */
-            background: linear-gradient(45deg, var(--primary-purple), #ff6b6b);
+            background: linear-gradient(45deg, var(--primary-color), #ff6b6b);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             font-weight: 700;
+            margin-bottom: 1rem;
         }
         
         .hero-content p {
@@ -85,7 +76,7 @@
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: linear-gradient(45deg, var(--primary-purple), var(--purple-light));
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
             color: white;
             border-radius: 50px;
             text-decoration: none;
@@ -93,12 +84,12 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+            box-shadow: 0 4px 15px rgba(250, 23, 244, 0.3);
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+            box-shadow: 0 6px 20px rgba(250, 23, 244, 0.5);
         }
         
         .section-title {
@@ -120,7 +111,7 @@
             position: absolute;
             width: 60%;
             height: 3px;
-            background: linear-gradient(to right, transparent, var(--primary-purple), transparent);
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
             bottom: 0;
             left: 20%;
         }
@@ -141,7 +132,7 @@
         .about-text h3 {
             font-size: 2rem;
             margin-bottom: 1.5rem;
-            color: var(--primary-purple);
+            color: var(--primary-color);
         }
         
         .about-text p {
@@ -184,25 +175,23 @@
         }
         
         .feature-card {
-            background: linear-gradient(145deg, #1a1a1a, #252525);
             border-radius: 10px;
             padding: 2rem;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(138, 43, 226, 0.1);
+            box-shadow: 0 4px 20px rgba(250, 23, 244, 0.3);
+            border: 1px solid rgba(250, 23, 244, 0.1);
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
-            border-color: var(--primary-purple);
+            box-shadow: 0 8px 25px rgba(250, 23, 244, 0.5);
         }
         
         .feature-icon {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            color: var(--primary-purple);
+            color: var(--primary-color);
         }
         
         .feature-card h3 {
@@ -242,8 +231,8 @@
         }
         
         .tab-button.active {
-            color: var(--primary-purple);
-            border-bottom: 2px solid var(--primary-purple);
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
         }
         
         .tab-content {
@@ -312,7 +301,7 @@
         .class-cta {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background-color: var(--primary-purple);
+            background-color: var(--primary-color);
             color: white;
             border-radius: 5px;
             text-decoration: none;
@@ -321,7 +310,7 @@
         }
         
         .class-cta:hover {
-            background-color: var(--purple-dark);
+            background-color: var(--primary-dark);
         }
         
         .testimonials-section {
@@ -355,7 +344,7 @@
             position: absolute;
             top: -1rem;
             left: 1rem;
-            color: var(--primary-purple);
+            color: var(--primary-color);
             opacity: 0.2;
         }
         
@@ -439,7 +428,7 @@
         .cta-section {
             padding: 6rem 2rem;
             text-align: center;
-            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1547153760-73fcb6c9bf53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.9), rgba(30, 30, 30, 0.9));
         }
         
         .cta-content {
@@ -477,7 +466,7 @@
 <body>
 
     <!-- Header & Navigation -->
-     <header class="header" id="header">
+    <header class="header" id="header">
       <nav class="nav">
         <div class="nav-container">
           <div class="nav-logo">
@@ -508,7 +497,7 @@
               ></a>
               <div class="dropdown-content">
                 <a href="Pre-recoded">Pre-recoded video</a>
-                <a href="./Onlineclassses.html">Zoom Online class</a>
+                <a href="./onlineturtorial.html">Zoom Online class</a>
               </div>
             </li>
             <li class="nav-item">
@@ -530,7 +519,6 @@
 
     <!-- Hero Section -->
     <section class="semi-classical-hero">
-        <div class="hero-background"></div>
         <div class="hero-content">
             <h1>Semi-Classical Dance</h1>
             <p>Where Movement Meets Memory</p>
@@ -547,7 +535,7 @@
                 <p>Our expert instructors blend elements from Kathak, Bharatanatyam, and other classical forms with modern musicality to create a unique dance experience that is both culturally rich and creatively fulfilling.</p>
             </div>
             <div class="about-image">
-                <img src="./public/Gallery.jpg">
+                <img src="./new images/g0.jpg">
             </div>
         </div>
     </section>

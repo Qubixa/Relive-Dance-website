@@ -229,77 +229,122 @@
         background: var(--purple-secondary);
     }
 
-    /* Wedding Gallery Section - Dark Theme */
-    .wedding-gallery {
+    /* NEW: Wedding Sangeet Section */
+    .wedding-sangeet {
         padding: 100px 0;
         background: var(--bg-dark);
     }
 
-    .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
+    .sangeet-container {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 20px;
     }
 
-    .gallery-item {
+    .sangeet-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .sangeet-poster {
         position: relative;
-        height: 300px;
+        border-radius: 15px;
         overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        border: 1px solid var(--border-color);
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transform: rotate(-2deg);
         transition: transform 0.5s ease;
+        border: 3px solid var(--purple-light);
     }
 
-    .gallery-item:hover img {
-        transform: scale(1.05);
+    .sangeet-poster:hover {
+        transform: rotate(0deg) scale(1.02);
     }
 
-    .gallery-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .sangeet-poster img {
         width: 100%;
-        height: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+        height: auto;
+        display: block;
+    }
+
+    .sangeet-info {
+        color: var(--text-light);
+    }
+
+    .sangeet-info h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'Playfair', serif;
+        color: var(--purple-light);
+    }
+
+    .sangeet-info p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        color: #cccccc;
+    }
+
+    .sangeet-features {
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .sangeet-features li {
         display: flex;
-        align-items: flex-end;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        padding: 20px;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
     }
 
-    .gallery-item:hover .gallery-overlay {
-        opacity: 1;
+    .sangeet-features i {
+        color: var(--purple-primary);
+        font-size: 1.3rem;
+        width: 25px;
     }
 
-    .gallery-caption {
-        color: white;
-        transform: translateY(20px);
-        transition: transform 0.3s ease;
+    .sangeet-cta {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
     }
 
-    .gallery-item:hover .gallery-caption {
-        transform: translateY(0);
-    }
-
-    .gallery-caption h3 {
-        font-size: 1.5rem;
+    .sangeet-btn {
+        padding: 12px 30px;
+        border-radius: 50px;
         font-weight: 600;
-        margin-bottom: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
     }
 
-    .gallery-caption p {
-        font-size: 0.9rem;
-        opacity: 0.8;
+    .btn-primary {
+        background: var(--purple-primary);
+        color: white;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background: var(--purple-secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--purple-light);
+        border: 2px solid var(--purple-primary);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(156, 39, 176, 0.1);
+        transform: translateY(-3px);
     }
 
     /* Testimonials Section - Dark Theme */
@@ -417,6 +462,18 @@
     }
 
     /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .sangeet-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        
+        .sangeet-poster {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+
     @media (max-width: 768px) {
         .wedding-hero h1 {
             font-size: 3rem;
@@ -430,8 +487,22 @@
             font-size: 2.2rem;
         }
         
+        .sangeet-info h2 {
+            font-size: 2.2rem;
+        }
+        
         .service-image {
             height: 200px;
+        }
+        
+        .sangeet-cta {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .sangeet-btn {
+            width: 100%;
+            justify-content: center;
         }
     }
 
@@ -451,13 +522,17 @@
         .services-grid {
             grid-template-columns: 1fr;
         }
+        
+        .sangeet-info h2 {
+            font-size: 1.8rem;
+        }
     }
 </style>
 <body>
  
 
     <!-- Header & Navigation -->
-       <header class="header" id="header">
+      <header class="header" id="header">
       <nav class="nav">
         <div class="nav-container">
           <div class="nav-logo">
@@ -488,7 +563,7 @@
               ></a>
               <div class="dropdown-content">
                 <a href="Pre-recoded">Pre-recoded video</a>
-                <a href="./Onlineclassses.html">Zoom Online class</a>
+                <a href="./onlineturtorial.html">Zoom Online class</a>
               </div>
             </li>
             <li class="nav-item">
@@ -531,7 +606,7 @@
                 <!-- First Dance Choreography -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-image">
-                        <img src="./public/wedding1 (1).jpg" alt="First Dance Choreography">
+                        <img src="./public/wedding3.jpg" alt="First Dance Choreography">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">First Dance Choreography</h3>
@@ -542,7 +617,7 @@
                             <li><i class="fas fa-check"></i> Confidence coaching</li>
                             <li><i class="fas fa-check"></i> 5-10 sessions package</li>
                         </ul>
-                        <span class="service-price">₹15,000</span>
+                        <!-- <span class="service-price">₹15,000</span> -->
                         <button class="service-btn">Learn More</button>
                     </div>
                 </div>
@@ -550,7 +625,7 @@
                 <!-- Sangeet Performance -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-image">
-                        <img src="./public/photo_6091303330392425399_y.jpg" alt="Sangeet Performance">
+                        <img src="./public/Wedding photo.jpg" alt="Sangeet Performance">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Sangeet Performance</h3>
@@ -561,7 +636,7 @@
                             <li><i class="fas fa-check"></i> Music editing</li>
                             <li><i class="fas fa-check"></i> 8-12 sessions package</li>
                         </ul>
-                        <span class="service-price">₹25,000</span>
+                        <!-- <span class="service-price">₹25,000</span> -->
                         <button class="service-btn">Learn More</button>
                     </div>
                 </div>
@@ -569,7 +644,7 @@
                 <!-- Bridal Party Dance -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-image">
-                        <img src="./public/wedding2.jpg" alt="Bridal Party Dance">
+                        <img src="./new images/Bridal Dance.jpg" alt="Bridal Party Dance">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Bridal Party Dance</h3>
@@ -580,7 +655,7 @@
                             <li><i class="fas fa-check"></i> Rehearsal coordination</li>
                             <li><i class="fas fa-check"></i> 6-8 sessions package</li>
                         </ul>
-                        <span class="service-price">₹18,000</span>
+                        <!-- <span class="service-price">₹18,000</span> -->
                         <button class="service-btn">Learn More</button>
                     </div>
                 </div>
@@ -588,78 +663,34 @@
         </div>
     </section>
 
-    <!-- Wedding Gallery Section -->
-    <section class="wedding-gallery">
-        <div class="container">
-            <div class="wedding-section-header" data-aos="fade-up">
-                <h2>Our Wedding Moments</h2>
-                <p>Captured memories from our couples' special days. Let these inspire your wedding dance vision.</p>
-            </div>
-
-            <div class="gallery-grid">
-                <!-- Gallery Item 1 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="./public/pose1.jpg" alt="Romantic First Dance">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h3>Romantic First Dance</h3>
-                            <p>Classic waltz choreography</p>
-                        </div>
-                    </div>
+    <!-- NEW: Wedding Sangeet Section -->
+    <section class="wedding-sangeet">
+        <div class="sangeet-container">
+            <div class="sangeet-content">
+                <div class="sangeet-poster" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./public/poster.jpg" alt="Sangeet by Ashwini - Wedding Choreography">
                 </div>
-
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="./public/Wedding photo.jpg" alt="Bridal Party Performance">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h3>Bridal Party Performance</h3>
-                            <p>Bollywood fusion routine</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="./public/wedding5.jpg" alt="Father Daughter Dance">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h3>Father-Daughter Dance</h3>
-                            <p>Emotional contemporary</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="./public/wedding6.jpg" alt="Sangeet Performance">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h3>Sangeet Performance</h3>
-                            <p>High-energy group dance</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 5 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="./public/wedding7.jpg" alt="Couple Dance Lesson">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h3>Dance Lessons</h3>
-                            <p>Personalized training</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 6 -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                    <img src="./public/wedding8.jpg" alt="Group Dance">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h3>Family Dance</h3>
-                            <p>Multi-generational fun</p>
-                        </div>
+                
+                <div class="sangeet-info" data-aos="fade-left" data-aos-delay="200">
+                    <h2>Sangeet By Ashwini</h2>
+                    <p>Make your wedding celebrations unforgettable with our professional sangeet choreography services. We create magical moments that you and your guests will cherish forever.</p>
+                    
+                    <ul class="sangeet-features">
+                        <li><i class="fas fa-music"></i> Complete Sangeet Choreography</li>
+                        <li><i class="fas fa-heart"></i> Haldi Ceremony Performances</li>
+                        <li><i class="fas fa-hands"></i> Mehndi Dance Routines</li>
+                        <li><i class="fas fa-ring"></i> Bride and Groom Dance</li>
+                        <li><i class="fas fa-star"></i> Best Song Selection</li>
+                        <li><i class="fas fa-smile"></i> Simple Choreography & Lots of Entertainment</li>
+                    </ul>
+                    
+                    <div class="sangeet-cta">
+                        <a href="tel:8828571648" class="sangeet-btn btn-primary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="https://www.instagram.com/sangeetbyashwini" target="_blank" class="sangeet-btn btn-secondary">
+                            <i class="fab fa-instagram"></i> Follow Us
+                        </a>
                     </div>
                 </div>
             </div>
