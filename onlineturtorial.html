@@ -24,12 +24,15 @@
 <style>
     /* Online Classes Specific Styles */
     .online-hero {
-        background: linear-gradient(135deg, #ec008c, #673ab7);
+        background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1547153760-73fcad3c3ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
         color: white;
         text-align: center;
-        padding: 80px 20px;
+        padding: 100px 20px;
         position: relative;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
     }
     
     .online-hero-content {
@@ -37,38 +40,162 @@
         margin: 0 auto;
         position: relative;
         z-index: 2;
+        width: 100%;
     }
     
     .online-hero h1 {
         font-family: 'Playfair', serif;
-        font-size: 3.5rem;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        font-size: 4rem;
+        margin-bottom: 25px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        line-height: 1.2;
     }
     
     .online-hero p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         max-width: 800px;
-        margin: 0 auto 30px;
+        margin: 0 auto 40px;
         line-height: 1.6;
+        font-weight: 300;
     }
     
     .hero-highlight {
-        color: #ffeb3b;
+        color: #ff4d94;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .hero-highlight:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #ff4d94, #673ab7);
+        border-radius: 3px;
+    }
+    
+    .hero-cta {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .cta-primary {
+        background: linear-gradient(135deg, #ff4d94, #673ab7);
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
         font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(255, 77, 148, 0.4);
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+    
+    .cta-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 77, 148, 0.5);
+    }
+    
+    .cta-secondary {
+        background: transparent;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+    
+    .cta-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+    }
+    
+    .features-section {
+        padding: 40px 20px;
+        background: #0a0a0a;
+    }
+    
+    .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+    
+    .features-content h2 {
+        font-family: 'Playfair', serif;
+        font-size: 3rem;
+        margin-bottom: 30px;
+        color: white;
+        line-height: 1.2;
+    }
+    
+    .features-content p {
+        color: #ccc;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+    
+    .features-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .features-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: white;
+        font-size: 1.1rem;
+    }
+    
+    .features-list i {
+        color: #ff4d94;
+        margin-right: 15px;
+        font-size: 1.5rem;
+        background: rgba(255, 77, 148, 0.1);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .features-visual {
+        position: relative;
+        display: flex;
+        justify-content: center;
     }
     
     .laptop-mockup {
-        max-width: 800px;
-        margin: 40px auto 0;
+        max-width: 600px;
+        width: 100%;
         position: relative;
     }
     
     .laptop-screen {
         background: #272727;
-        border-radius: 12px;
+        border-radius: 12px 12px 0 0;
         padding: 10px;
         box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
     }
     
     .laptop-screen-inner {
@@ -76,10 +203,31 @@
         border-radius: 8px;
         overflow: hidden;
         position: relative;
-        height: 450px;
+        height: 340px;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    
+    .laptop-base {
+        width: 100%;
+        height: 20px;
+        background: #333;
+        border-radius: 0 0 5px 5px;
+        margin-top: -5px;
+        position: relative;
+    }
+    
+    .laptop-base:after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 5px;
+        background: #222;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0 0 5px 5px;
     }
     
     .zoom-interface {
@@ -100,6 +248,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-size: 0.9rem;
     }
     
     .zoom-logo {
@@ -132,11 +281,8 @@
         position: relative;
     }
     
-    .instructor-video img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: 3px solid white;
+    .instructor-video i {
+        font-size: 3rem;
         margin-bottom: 15px;
     }
     
@@ -150,7 +296,7 @@
     .participant {
         background: #f0f0f0;
         border-radius: 8px;
-        height: 80px;
+        height: 70px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -168,13 +314,14 @@
     
     .control-button {
         background: #ddd;
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        font-size: 0.9rem;
     }
     
     .end-call {
@@ -183,66 +330,134 @@
     }
     
     .benefits-section {
-        padding: 80px 20px;
-        background: #272626;
-
+        padding: 100px 20px;
+        background: #111;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .benefits-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 30% 70%, rgba(255, 77, 148, 0.1), transparent 70%);
+        pointer-events: none;
     }
     
     .section-title {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 70px;
         color: white;
         font-family: 'Playfair', serif;
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff4d94, #673ab7);
+        border-radius: 2px;
     }
     
     .benefits-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
+        gap: 40px;
         max-width: 1200px;
         margin: 0 auto;
     }
     
     .benefit-card {
-        background: rgb(60, 59, 59);
-        border-radius: 12px;
-        padding: 30px;
+        background: rgba(30, 30, 30, 0.7);
+        border-radius: 16px;
+        padding: 40px 30px;
         text-align: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .benefit-card:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, #ff4d94, #673ab7);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
     }
     
     .benefit-card:hover {
         transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .benefit-card:hover:before {
+        transform: scaleX(1);
     }
     
     .benefit-icon {
-        background: linear-gradient(135deg, #ec008c, #673ab7);
-        width: 70px;
-        height: 70px;
+        background: linear-gradient(135deg, #ff4d94, #673ab7);
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto 20px;
+        margin: 0 auto 25px;
         color: white;
-        font-size: 1.8rem;
+        font-size: 2rem;
+        transition: all 0.3s ease;
+    }
+    
+    .benefit-card:hover .benefit-icon {
+        transform: scale(1.1) rotate(5deg);
     }
     
     .benefit-card h3 {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         color: white;
+        font-size: 1.5rem;
     }
     
     .benefit-card p {
-        color: white;
-        line-height: 1.6;
+        color: #ccc;
+        line-height: 1.7;
+        font-size: 1.05rem;
     }
     
     .how-it-works {
-        padding: 80px 20px;
-        background: black;
+        padding: 100px 20px;
+        background: #0a0a0a;
+        position: relative;
+    }
+    
+    .how-it-works:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(103, 58, 183, 0.1) 0%, transparent 70%);
+        pointer-events: none;
     }
     
     .steps-container {
@@ -250,17 +465,31 @@
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 50px;
+        position: relative;
+    }
+    
+    .steps-container:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        width: 3px;
+        background: linear-gradient(to bottom, #ff4d94, #673ab7);
+        z-index: 1;
     }
     
     .step {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 30px;
+        position: relative;
+        z-index: 2;
     }
     
     .step-number {
-        background: linear-gradient(135deg, #ec008c, #673ab7);
+        background: linear-gradient(135deg, #ff4d94, #673ab7);
         color: white;
         width: 60px;
         height: 60px;
@@ -271,64 +500,188 @@
         font-size: 1.5rem;
         font-weight: bold;
         flex-shrink: 0;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(255, 77, 148, 0.3);
     }
     
     .step-content {
         flex: 1;
+        background: rgba(30, 30, 30, 0.7);
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 4px solid #ff4d94;
     }
     
     .step-content h3 {
-        margin-bottom: 10px;
-        color:white;
+        margin-bottom: 15px;
+        color: white;
+        font-size: 1.4rem;
     }
     
     .step-content p {
-        color: white;
-        line-height: 1.6;
+        color: #ccc;
+        line-height: 1.7;
+        margin: 0;
     }
     
     .cta-section {
-        background: linear-gradient(135deg, #ec008c, #673ab7);
-        padding: 80px 20px;
+        background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1547153760-73fcad3c3ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover fixed;
+        padding: 120px 20px;
         text-align: center;
         color: white;
+        position: relative;
     }
     
     .cta-content {
         max-width: 800px;
         margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .cta-content h2 {
+        font-family: 'Playfair', serif;
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .cta-content p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        line-height: 1.7;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .cta-button {
         display: inline-block;
-        background: white;
-        color: #673ab7;
-        padding: 15px 40px;
+        background: linear-gradient(135deg, #ff4d94, #673ab7);
+        color: white;
+        padding: 18px 45px;
         border-radius: 50px;
         font-weight: 600;
         text-decoration: none;
-        margin-top: 30px;
         transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        box-shadow: 0 5px 20px rgba(255, 77, 148, 0.4);
+        font-size: 1.1rem;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .cta-button:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
     }
     
     .cta-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 8px 25px rgba(255, 77, 148, 0.5);
+    }
+    
+    .cta-button:hover:before {
+        left: 100%;
+    }
+    
+    @media (max-width: 992px) {
+        .features-container {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        
+        .features-content h2 {
+            text-align: center;
+        }
+        
+        .features-content p {
+            text-align: center;
+        }
     }
     
     @media (max-width: 768px) {
         .online-hero h1 {
+            font-size: 2.8rem;
+        }
+        
+        .online-hero p {
+            font-size: 1.1rem;
+        }
+        
+        .features-content h2 {
             font-size: 2.5rem;
         }
         
         .step {
             flex-direction: column;
             text-align: center;
+            gap: 20px;
+        }
+        
+        .steps-container:before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .step-content {
+            border-left: none;
+            border-top: 4px solid #ff4d94;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+        }
+        
+        .hero-cta {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cta-primary, .cta-secondary {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
         }
         
         .laptop-screen-inner {
-            height: 300px;
+            height: 250px;
+        }
+        
+        .instructor-video i {
+            font-size: 2rem;
+        }
+        
+        .participant {
+            height: 50px;
+            font-size: 0.7rem;
+        }
+        
+        .zoom-header {
+            font-size: 0.7rem;
+            padding: 8px 10px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .online-hero {
+            padding: 80px 20px;
+        }
+        
+        .online-hero h1 {
+            font-size: 2.2rem;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+        }
+        
+        .benefit-card {
+            padding: 30px 20px;
         }
     }
 </style>
@@ -392,39 +745,62 @@
         <!-- Hero Section -->
         <section class="online-hero">
             <div class="online-hero-content">
-                <h1>Dance From Anywhere with Zoom Classes</h1>
-                <p>Experience professional dance instruction from the comfort of your home. Our live Zoom classes bring the studio to you with real-time feedback and personalized attention.</p>
-                <div class="laptop-mockup">
-                    <div class="laptop-screen">
-                        <div class="laptop-screen-inner">
-                            <div class="zoom-interface">
-                                <div class="zoom-header">
-                                    <div class="zoom-logo">
-                                        <i class="fas fa-video"></i>
-                                        <span>Zoom Meeting</span>
+                <h1>Dance From <span class="hero-highlight">Anywhere</span> with Our Zoom Classes</h1>
+                <p>Experience professional dance instruction with real-time feedback from the comfort of your home. Join our vibrant virtual dance community today!</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="cta-primary">Start Dancing Now</a>
+                    <a href="#how-it-works" class="cta-secondary">How It Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="features-container">
+                <div class="features-content" data-aos="fade-right">
+                    <h2>Why Our Virtual Classes Stand Out</h2>
+                    <p>Our online Zoom dance classes bring the studio experience directly to you. With expert instructors, interactive sessions, and a supportive community, you'll never miss a beat.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Live interaction with professional instructors</li>
+                        <li><i class="fas fa-check-circle"></i> Small class sizes for personalized attention</li>
+                        <li><i class="fas fa-check-circle"></i> Recorded sessions available for review</li>
+                        <li><i class="fas fa-check-circle"></i> Connect with dancers from around the world</li>
+                    </ul>
+                </div>
+                <div class="features-visual" data-aos="fade-left">
+                    <div class="laptop-mockup">
+                        <div class="laptop-screen">
+                            <div class="laptop-screen-inner">
+                                <div class="zoom-interface">
+                                    <div class="zoom-header">
+                                        <div class="zoom-logo">
+                                            <i class="fas fa-video"></i>
+                                            <span>Zoom Meeting</span>
+                                        </div>
+                                        <div class="zoom-meeting-id">Relive Dance Class | Meeting ID: 123 456 7890</div>
                                     </div>
-                                    <div class="zoom-meeting-id">Relive Dance Class | Meeting ID: 123 456 7890</div>
-                                </div>
-                                <div class="zoom-main">
-                                    <div class="instructor-video">
-                                        <i class="fas fa-user-circle fa-3x"></i>
-                                        <h3>Your Instructor: Ashwini</h3>
-                                        <p>Live - Teaching Bollywood Moves</p>
+                                    <div class="zoom-main">
+                                        <div class="instructor-video">
+                                            <i class="fas fa-user-circle"></i>
+                                            <h3>Your Instructor: Ashwini</h3>
+                                            <p>Live - Teaching Bollywood Moves</p>
+                                        </div>
+                                        <div class="participants">
+                                            <div class="participant">Student 1</div>
+                                            <div class="participant">Student 2</div>
+                                            <div class="participant">Student 3</div>
+                                        </div>
                                     </div>
-                                    <div class="participants">
-                                        <div class="participant">Student 1</div>
-                                        <div class="participant">Student 2</div>
-                                        <div class="participant">Student 3</div>
+                                    <div class="zoom-controls">
+                                        <div class="control-button"><i class="fas fa-microphone"></i></div>
+                                        <div class="control-button"><i class="fas fa-video"></i></div>
+                                        <div class="control-button"><i class="fas fa-users"></i></div>
+                                        <div class="control-button end-call"><i class="fas fa-phone"></i></div>
                                     </div>
-                                </div>
-                                <div class="zoom-controls">
-                                    <div class="control-button"><i class="fas fa-microphone"></i></div>
-                                    <div class="control-button"><i class="fas fa-video"></i></div>
-                                    <div class="control-button"><i class="fas fa-users"></i></div>
-                                    <div class="control-button end-call"><i class="fas fa-phone"></i></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="laptop-base"></div>
                     </div>
                 </div>
             </div>
@@ -432,7 +808,7 @@
 
         <!-- Benefits Section -->
         <section class="benefits-section">
-            <h2 class="section-title">Why Choose Our Online Classes?</h2>
+            <h2 class="section-title">Benefits of Online Dance Classes</h2>
             <div class="benefits-grid">
                 <div class="benefit-card" data-aos="fade-up">
                     <div class="benefit-icon">
@@ -480,7 +856,7 @@
         </section>
 
         <!-- How It Works Section -->
-        <section class="how-it-works">
+        <section class="how-it-works" id="how-it-works">
             <h2 class="section-title">How Our Online Classes Work</h2>
             <div class="steps-container">
                 <div class="step" data-aos="fade-right">
