@@ -34,16 +34,17 @@
         margin-bottom: 0.5rem;
 }
 
-.hero-subtext{
-     font-family: 'Lucida Handwriting', cursive;
-        font-size: 1.5rem;
-        font-weight: normal;
-        background: linear-gradient(90deg, #dda0dd, #6495ed);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-align: center;
+.hero-subtext {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 1.5rem;
+    font-weight: normal;
+    background: linear-gradient(90deg, #ff69b4, #800080); /* pink to purple */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
 }
+
 
 /* .hero-content {
     position: relative;

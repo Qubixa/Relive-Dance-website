@@ -20,7 +20,7 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
- <style>
+<style>
     /* Color Variables */
     :root {
         --purple-primary: #9c27b0;
@@ -35,60 +35,31 @@
         --border-color: #333333;
     }
 
-    /* Wedding Hero Section */
-    .wedding-hero {
-        position: relative;
-        height: 80vh;
+    /* Poster Section */
+    .poster-section {
+        padding: 60px 0;
+        background: var(--bg-dark);
         display: flex;
-        align-items: center;
         justify-content: center;
-        text-align: center;
-        color: white;
-        background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-        background-size: cover;
-        background-attachment: fixed;
+        align-items: center;
     }
-
-    .wedding-hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(156, 39, 176, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
-    }
-
-    .wedding-hero .container {
-        position: relative;
-        z-index: 1;
-        max-width: 800px;
-    }
-
-    .wedding-hero h1 {
-        font-size: 4.5rem;
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-        font-family: 'Playfair', serif;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .wedding-hero p {
-        font-size: 1.8rem;
-        font-weight: 300;
-        margin-bottom: 2rem;
-        line-height: 1.4;
-    }
-
     
-    .wedding-hero-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        background: var(--purple-secondary);
+    .poster-container {
+        max-width: 1900px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .poster-image {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        display: block;
     }
 
     /* Wedding Services Section - Dark Theme */
     .wedding-services {
-        padding: 100px 0;
+        padding: 40px 0;
         background: var(--bg-dark);
     }
 
@@ -347,6 +318,115 @@
         transform: translateY(-3px);
     }
 
+    /* Gallery Section - UPDATED */
+    .gallery-section {
+        padding: 100px 0;
+        background: var(--bg-darker);
+        position: relative;
+    }
+    
+    .gallery-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+    }
+    
+    .gallery-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    .gallery-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 40px 0;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    .gallery-carousel::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
+    }
+    
+    .gallery-item {
+        flex: 0 0 auto;
+        width: 350px;
+        scroll-snap-align: start;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+        transform: scale(1.03);
+    }
+    
+    .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+    }
+    
+    /* UPDATED: Carousel Navigation - Arrows on sides */
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--purple-primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.5rem;
+        border: none;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .carousel-arrow:hover {
+        background: var(--purple-secondary);
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .prev-arrow {
+        left: -30px;
+    }
+    
+    .next-arrow {
+        right: -30px;
+    }
+    
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+    
+    .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    
+    .carousel-dot.active {
+        background: var(--purple-primary);
+        transform: scale(1.2);
+    }
+
     /* Testimonials Section - Dark Theme */
     .wedding-testimonials {
         padding: 100px 0;
@@ -462,6 +542,16 @@
     }
 
     /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+        .prev-arrow {
+            left: 10px;
+        }
+        
+        .next-arrow {
+            right: 10px;
+        }
+    }
+
     @media (max-width: 992px) {
         .sangeet-content {
             grid-template-columns: 1fr;
@@ -472,17 +562,19 @@
             max-width: 500px;
             margin: 0 auto;
         }
+        
+        .gallery-item {
+            width: 300px;
+        }
+        
+        .carousel-arrow {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
     }
 
     @media (max-width: 768px) {
-        .wedding-hero h1 {
-            font-size: 3rem;
-        }
-        
-        .wedding-hero p {
-            font-size: 1.4rem;
-        }
-        
         .wedding-section-header h2 {
             font-size: 2.2rem;
         }
@@ -504,27 +596,43 @@
             width: 100%;
             justify-content: center;
         }
+        
+        .gallery-item {
+            width: 280px;
+        }
+        
+        .carousel-arrow {
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+        }
+        
+        .prev-arrow {
+            left: 5px;
+        }
+        
+        .next-arrow {
+            right: 5px;
+        }
     }
 
     @media (max-width: 576px) {
-        .wedding-hero {
-            height: 70vh;
-        }
-        
-        .wedding-hero h1 {
-            font-size: 2.5rem;
-        }
-        
-        .wedding-hero p {
-            font-size: 1.2rem;
-        }
-        
         .services-grid {
             grid-template-columns: 1fr;
         }
         
         .sangeet-info h2 {
             font-size: 1.8rem;
+        }
+        
+        .gallery-item {
+            width: 250px;
+        }
+        
+        .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
         }
     }
 </style>
@@ -583,14 +691,10 @@
       </nav>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="wedding-hero">
-        <div class="wedding-hero-overlay"></div>
-        <div class="container">
-            <div data-aos="fade-up" data-aos-duration="800">
-                <h1>Wedding Choreography</h1>
-                <p>Create unforgettable moments with your perfect first dance</p>
-            </div>
+    <!-- Poster Section -->
+    <section class="poster-section">
+        <div class="poster-container" style="margin-top: 40px;">
+            <img src="./new images/Grid image.png" alt="Sangeet by Ashwini" class="poster-image">
         </div>
     </section>
 
@@ -606,16 +710,16 @@
                 <!-- First Dance Choreography -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-image">
-                        <img src="./public/wedding3.jpg" alt="First Dance Choreography">
+                        <img src="./new images/First dance image.jpg" alt="First Dance Choreography">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">First Dance Choreography</h3>
-                        <p class="service-description">Custom choreography tailored to your song, skill level, and vision for that perfect first dance as a married couple.</p>
+                        <p class="service-description">Custom Choreography tailored to your song, skill level, and vision for that perfect first dance as a married couple.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Personalized routine</li>
                             <li><i class="fas fa-check"></i> Song selection guidance</li>
                             <li><i class="fas fa-check"></i> Confidence coaching</li>
-                            <li><i class="fas fa-check"></i> 5-10 sessions package</li>
+                            <li><i class="fas fa-check"></i> 1-5 sessions package</li>
                         </ul>
                         <!-- <span class="service-price">₹15,000</span> -->
                         <button class="service-btn">Learn More</button>
@@ -625,16 +729,16 @@
                 <!-- Sangeet Performance -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-image">
-                        <img src="./public/Wedding photo.jpg" alt="Sangeet Performance">
+                        <img src="./new images/Sangeet Performance.jpg" alt="Sangeet Performance">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Sangeet Performance</h3>
-                        <p class="service-description">High-energy Bollywood or fusion performances for your sangeet ceremony that will wow your guests.</p>
+                        <p class="service-description">High-Energy Bollywood or fusion performances for your sangeet ceremony that will wow your guests.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Full group training</li>
                             <li><i class="fas fa-check"></i> Costume guidance</li>
                             <li><i class="fas fa-check"></i> Music editing</li>
-                            <li><i class="fas fa-check"></i> 8-12 sessions package</li>
+                            <li><i class="fas fa-check"></i> 5-10 sessions package</li>
                         </ul>
                         <!-- <span class="service-price">₹25,000</span> -->
                         <button class="service-btn">Learn More</button>
@@ -644,16 +748,16 @@
                 <!-- Bridal Party Dance -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-image">
-                        <img src="./new images/Bridal Dance.jpg" alt="Bridal Party Dance">
+                        <img src="./new images/Cocktail party dance.jpg" alt="Bridal Party Dance">
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Bridal Party Dance</h3>
+                        <h3 class="service-title">Cocktail Party Dance</h3>
                         <p class="service-description">Fun and energetic routines for your entire bridal party to perform together during the reception.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Group choreography</li>
                             <li><i class="fas fa-check"></i> All skill levels welcome</li>
                             <li><i class="fas fa-check"></i> Rehearsal coordination</li>
-                            <li><i class="fas fa-check"></i> 6-8 sessions package</li>
+                            <li><i class="fas fa-check"></i> 1-5 sessions package</li>
                         </ul>
                         <!-- <span class="service-price">₹18,000</span> -->
                         <button class="service-btn">Learn More</button>
@@ -692,6 +796,55 @@
                             <i class="fab fa-instagram"></i> Follow Us
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="wedding-section-header" data-aos="fade-up">
+                <h2>Our Gallery</h2>
+                <p>Take a look at some of our memorable wedding performances and choreography sessions</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-wrapper">
+                    <!-- Carousel arrows positioned on sides -->
+                    <button class="carousel-arrow prev-arrow">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="gallery-carousel">
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                            <img src="./new images/First dance image.jpg" alt="Wedding Performance">
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./new images/Sangeet Performance.jpg" alt="Sangeet Choreography">
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./new images/Cocktail party dance.jpg" alt="Bridal Dance">
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Group Performance">
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dance Practice">
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-arrow next-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-dots">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
                 </div>
             </div>
         </div>
@@ -869,7 +1022,78 @@
 
     <!-- Custom JavaScript -->
     <script type="module" src="script.js"></script>
-    
 
+      <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Gallery Carousel Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.gallery-carousel');
+            const items = document.querySelectorAll('.gallery-item');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.querySelector('.prev-arrow');
+            const nextBtn = document.querySelector('.next-arrow');
+            
+            let currentIndex = 0;
+            const itemWidth = 350; // Width of gallery item + gap
+            const itemsToShow = Math.floor(carousel.offsetWidth / itemWidth);
+            
+            // Function to update carousel position
+            function updateCarousel() {
+                carousel.scrollTo({
+                    left: currentIndex * itemWidth,
+                    behavior: 'smooth'
+                });
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Next button click event
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < items.length - itemsToShow) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+            
+            // Previous button click event
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+            
+            // Dot click events
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+            
+            // Auto-play carousel (optional)
+            setInterval(() => {
+                if (currentIndex < items.length - itemsToShow) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }, 5000);
+        });
+    </script>
 </body>
 </html>

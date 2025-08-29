@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Relive Dance & Fitness Studio</title>
-    <meta name="description" content="Discover the story behind Relive Dance & Fitness Studio - Where movement meets memory. Professional dance training in Mumbai.">
+    <title>Online Zoom Classes - Relive Dance & Fitness Studio</title>
+    <meta name="description" content="Learn dance from the comfort of your home with Relive Dance & Fitness Studio's online Zoom classes. Professional instruction for all levels.">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,329 +21,317 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
- <style>
-        /* Main Content Styles */
-        .main-content {
-            background-color: #0a0a0a;
-            color: #ffffff;
-        }
+<style>
+    /* Online Classes Specific Styles */
+    .online-hero {
+        background: linear-gradient(135deg, #ec008c, #673ab7);
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .online-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .online-hero h1 {
+        font-family: 'Playfair', serif;
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .online-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+    }
+    
+    .hero-highlight {
+        color: #ffeb3b;
+        font-weight: 600;
+    }
+    
+    .laptop-mockup {
+        max-width: 800px;
+        margin: 40px auto 0;
+        position: relative;
+    }
+    
+    .laptop-screen {
+        background: #272727;
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    
+    .laptop-screen-inner {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .zoom-interface {
+        background: white;
+        width: 90%;
+        height: 90%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .zoom-header {
+        background: #0e71eb;
+        color: white;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .zoom-logo {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+    }
+    
+    .zoom-logo i {
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+    
+    .zoom-main {
+        flex: 1;
+        display: flex;
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .instructor-video {
+        flex: 2;
+        background: linear-gradient(135deg, #ec008c, #673ab7);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: relative;
+    }
+    
+    .instructor-video img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid white;
+        margin-bottom: 15px;
+    }
+    
+    .participants {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .participant {
+        background: #f0f0f0;
+        border-radius: 8px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #555;
+    }
+    
+    .zoom-controls {
+        background: #f5f5f5;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .control-button {
+        background: #ddd;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .end-call {
+        background: #f2473d;
+        color: white;
+    }
+    
+    .benefits-section {
+        padding: 80px 20px;
+        background: #272626;
 
-        /* Hero Section */
-        .categories-hero {
-            position: relative;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        color: white;
+        font-family: 'Playfair', serif;
+        font-size: 2.5rem;
+    }
+    
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .benefit-card {
+        background: rgb(60, 59, 59);
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .benefit-icon {
+        background: linear-gradient(135deg, #ec008c, #673ab7);
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 1.8rem;
+    }
+    
+    .benefit-card h3 {
+        margin-bottom: 15px;
+        color: white;
+    }
+    
+    .benefit-card p {
+        color: white;
+        line-height: 1.6;
+    }
+    
+    .how-it-works {
+        padding: 80px 20px;
+        background: black;
+    }
+    
+    .steps-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .step {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .step-number {
+        background: linear-gradient(135deg, #ec008c, #673ab7);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    
+    .step-content {
+        flex: 1;
+    }
+    
+    .step-content h3 {
+        margin-bottom: 10px;
+        color:white;
+    }
+    
+    .step-content p {
+        color: white;
+        line-height: 1.6;
+    }
+    
+    .cta-section {
+        background: linear-gradient(135deg, #ec008c, #673ab7);
+        padding: 80px 20px;
+        text-align: center;
+        color: white;
+    }
+    
+    .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background: white;
+        color: #673ab7;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    
+    @media (max-width: 768px) {
+        .online-hero h1 {
+            font-size: 2.5rem;
         }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-            z-index: 2;
-        }
-
-        .categories-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            font-family: 'Playfair', serif;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(90deg, #9c27b0, #e91e63);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .categories-hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            color: #e0e0e0;
-        }
-
-        .hero-btn {
-            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #8e24aa 0%, #d81b60 100%);
-        }
-
-        /* Categories Section */
-        .categories-section {
-            padding: 80px 0;
-            background: #121212;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-family: 'Playfair', serif;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #9c27b0, #e91e63);
-            border-radius: 2px;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: #bbbbbb;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Unique Category Grid */
-        .category-mosaic {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(4, 200px);
-            gap: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .category-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s ease;
-        }
-
-        .category-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-        }
-
-        .category-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .category-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%);
-            display: flex;
+        
+        .step {
             flex-direction: column;
-            justify-content: flex-end;
-            padding: 20px;
-            color: white;
-        }
-
-        .category-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .category-desc {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 15px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .category-btn {
-            align-self: flex-start;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .category-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Category Item Sizes */
-        .item-1 {
-            grid-column: span 6;
-            grid-row: span 2;
-        }
-
-        .item-2 {
-            grid-column: span 3;
-            grid-row: span 1;
-        }
-
-        .item-3 {
-            grid-column: span 3;
-            grid-row: span 1;
-        }
-
-        .item-4 {
-            grid-column: span 3;
-            grid-row: span 2;
-        }
-
-        .item-5 {
-            grid-column: span 3;
-            grid-row: span 2;
-        }
-
-        .item-6 {
-            grid-column: span 6;
-            grid-row: span 2;
-        }
-
-        /* Features Section */
-        .features-section {
-            padding: 80px 0;
-            background: #0a0a0a;
-        }
-
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            background: #1e1e1e;
-            border-radius: 15px;
-            padding: 40px 30px;
             text-align: center;
-            transition: all 0.3s ease;
-            border-bottom: 4px solid #9c27b0;
         }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        
+        .laptop-screen-inner {
+            height: 300px;
         }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #9c27b0, #e91e63);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-
-        .feature-desc {
-            color: #bbbbbb;
-            line-height: 1.6;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .category-mosaic {
-                grid-template-rows: repeat(6, 200px);
-            }
-            
-            .item-1, .item-6 {
-                grid-column: span 12;
-            }
-            
-            .item-2, .item-3, .item-4, .item-5 {
-                grid-column: span 6;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .categories-hero h1 {
-                font-size: 3rem;
-            }
-            
-            .categories-hero p {
-                font-size: 1.2rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .category-mosaic {
-                grid-template-rows: repeat(6, 150px);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .categories-hero {
-                height: 60vh;
-            }
-            
-            .categories-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .category-mosaic {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(6, 250px);
-            }
-            
-            .item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
-        }
-    </style>
+    }
+</style>
 
 <body>
 
@@ -399,153 +387,149 @@
       </nav>
     </header>
 
-
-       <!-- Hero Section -->
-    <section class="categories-hero">
-        <div class="hero-content" data-aos="fade-up">
-            <h1>Explore Our Dance Categories</h1>
-            <p>Discover the perfect dance style for you with our professional instructors and comprehensive programs</p>
-            <button class="hero-btn">Start Your Dance Journey</button>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Our Dance Categories</h2>
-                <p>From high-energy Bollywood to graceful Semi-Classical, we offer diverse styles for all ages and skill levels</p>
-            </div>
-
-            <div class="category-mosaic">
-                <!-- Bollywood -->
-                <div class="category-item item-1" data-aos="fade-up" data-aos-delay="100">
-                    <img src="./public/pose.jpg">
-                    <div class="category-overlay">
-                        <h3 class="category-title">Bollywood Dance</h3>
-                        <p class="category-desc">Energetic and expressive dance style inspired by Indian cinema</p>
-                        <button class="category-btn">Explore Classes</button>
-                    </div>
-                </div>
-
-                <!-- Semi-Classical -->
-                <div class="category-item item-2" data-aos="fade-up" data-aos-delay="150">
-                    <img src="./public/Gallery.jpg" alt="Semi-Classical Dance">
-                    <div class="category-overlay">
-                        <h3 class="category-title">Semi-Classical</h3>
-                        <button class="category-btn">View Programs</button>
-                    </div>
-                </div>
-
-                <!-- Kids Dance -->
-                <div class="category-item item-3" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kids Dance">
-                    <div class="category-overlay">
-                        <h3 class="category-title">Kids Dance</h3>
-                        <button class="category-btn">Learn More</button>
-                    </div>
-                </div>
-
-                <!-- Yoga -->
-                <div class="category-item item-4" data-aos="fade-up" data-aos-delay="250">
-                    <img src="./public/yoga.jpg" alt="Yoga">
-                    <div class="category-overlay">
-                        <h3 class="category-title">Yoga</h3>
-                        <p class="category-desc">Harmonize body and mind with our yoga sessions</p>
-                        <button class="category-btn">Join Now</button>
-                    </div>
-                </div>
-
-                <!-- Wedding Choreography -->
-                <div class="category-item item-5" data-aos="fade-up" data-aos-delay="300">
-                    <img src="./public/Wedding photo.jpg" alt="Wedding Choreography">
-                    <div class="category-overlay">
-                        <h3 class="category-title">Wedding Choreography</h3>
-                        <button class="category-btn">Get Started</button>
-                    </div>
-                </div>
-
-                <!-- All Categories -->
-                <div class="category-item item-6" data-aos="fade-up" data-aos-delay="350">
-                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="All Dance Categories">
-                    <div class="category-overlay">
-                        <h3 class="category-title">Explore All Categories</h3>
-                        <p class="category-desc">Find the perfect dance style for your personality and goals</p>
-                        <button class="category-btn">View All Programs</button>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="online-hero">
+            <div class="online-hero-content">
+                <h1>Dance From Anywhere with Zoom Classes</h1>
+                <p>Experience professional dance instruction from the comfort of your home. Our live Zoom classes bring the studio to you with real-time feedback and personalized attention.</p>
+                <div class="laptop-mockup">
+                    <div class="laptop-screen">
+                        <div class="laptop-screen-inner">
+                            <div class="zoom-interface">
+                                <div class="zoom-header">
+                                    <div class="zoom-logo">
+                                        <i class="fas fa-video"></i>
+                                        <span>Zoom Meeting</span>
+                                    </div>
+                                    <div class="zoom-meeting-id">Relive Dance Class | Meeting ID: 123 456 7890</div>
+                                </div>
+                                <div class="zoom-main">
+                                    <div class="instructor-video">
+                                        <i class="fas fa-user-circle fa-3x"></i>
+                                        <h3>Your Instructor: Ashwini</h3>
+                                        <p>Live - Teaching Bollywood Moves</p>
+                                    </div>
+                                    <div class="participants">
+                                        <div class="participant">Student 1</div>
+                                        <div class="participant">Student 2</div>
+                                        <div class="participant">Student 3</div>
+                                    </div>
+                                </div>
+                                <div class="zoom-controls">
+                                    <div class="control-button"><i class="fas fa-microphone"></i></div>
+                                    <div class="control-button"><i class="fas fa-video"></i></div>
+                                    <div class="control-button"><i class="fas fa-users"></i></div>
+                                    <div class="control-button end-call"><i class="fas fa-phone"></i></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Why Choose Relive Studio?</h2>
-                <p>We provide exceptional dance education through innovative teaching methods</p>
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <h2 class="section-title">Why Choose Our Online Classes?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Learn From Comfort</h3>
+                    <p>No commute needed. Practice in your favorite space without worrying about traffic or parking.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Choose class times that work with your routine. We offer multiple sessions throughout the day.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Personal Attention</h3>
+                    <p>Small class sizes ensure you receive individualized feedback and corrections from our instructors.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Access Anywhere</h3>
+                    <p>Join our classes from any location. All you need is a stable internet connection and Zoom app.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="benefit-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Recorded Sessions</h3>
+                    <p>Missed a class? Access recorded sessions to practice at your own pace and never fall behind.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>Connect with fellow dancers in our virtual community. Share progress and motivate each other.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="features-container">
-                <div class="features-grid">
-                    <!-- Feature 1 -->
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="feature-icon">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <h3 class="feature-title">Expert Instructors</h3>
-                        <p class="feature-desc">Learn from industry professionals with years of teaching and performance experience.</p>
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2 class="section-title">How Our Online Classes Work</h2>
+            <div class="steps-container">
+                <div class="step" data-aos="fade-right">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Register for a Class</h3>
+                        <p>Choose from our variety of dance styles and time slots that work best for you. Complete your registration and payment online.</p>
                     </div>
-
-                    <!-- Feature 2 -->
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="feature-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <h3 class="feature-title">Structured Curriculum</h3>
-                        <p class="feature-desc">Progress through carefully designed levels from beginner to advanced.</p>
+                </div>
+                <div class="step" data-aos="fade-left">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Receive Zoom Link</h3>
+                        <p>After registration, you'll receive a confirmation email with the Zoom meeting link and password. Save this information for class time.</p>
                     </div>
-
-                    <!-- Feature 3 -->
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="feature-title">Supportive Community</h3>
-                        <p class="feature-desc">Join a network of passionate dancers who motivate and inspire each other.</p>
+                </div>
+                <div class="step" data-aos="fade-right">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Set Up Your Space</h3>
+                        <p>Clear a small area for movement, ensure your device is charged, and test your audio/video settings before class begins.</p>
                     </div>
-
-                    <!-- Feature 4 -->
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="feature-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <h3 class="feature-title">Flexible Scheduling</h3>
-                        <p class="feature-desc">Choose from multiple class times to fit your busy schedule.</p>
+                </div>
+                <div class="step" data-aos="fade-left">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Join The Live Class</h3>
+                        <p>Click the Zoom link 5-10 minutes before class starts. Our instructor will welcome you and guide you through the session.</p>
                     </div>
-
-                    <!-- Feature 5 -->
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                        <div class="feature-icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <h3 class="feature-title">Performance Opportunities</h3>
-                        <p class="feature-desc">Showcase your skills in our annual recitals and community events.</p>
-                    </div>
-
-                    <!-- Feature 6 -->
-                    <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
-                        <div class="feature-icon">
-                            <i class="fas fa-child"></i>
-                        </div>
-                        <h3 class="feature-title">All Ages Welcome</h3>
-                        <p class="feature-desc">Programs designed for children, teens, and adults at every skill level.</p>
+                </div>
+                <div class="step" data-aos="fade-right">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Dance & Enjoy</h3>
+                        <p>Follow along with the live instruction, ask questions, and receive real-time feedback just like in a physical studio.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Dance From Home?</h2>
+                <p>Join our next Zoom dance class and experience the joy of dancing without leaving your home. All levels are welcome!</p>
+                <a href="contact.html" class="cta-button">Book Your Spot Now</a>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -658,7 +642,8 @@
         </div>
       </div>
     </footer>
-     <!-- Pre-recorded Classes Floating Button -->
+    
+    <!-- Pre-recorded Classes Floating Button -->
     <a href="./Pre-recoded" class="prerecorded-float" aria-label="Pre-recorded classes">
         <div class="star-text">What's New</div>
     </a>
@@ -683,5 +668,15 @@
     <!-- Custom JavaScript -->
     <script type="module" src="script.js"></script>
     
+    <script>
+        // Initialize AOS animations
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
 </body>
 </html>
