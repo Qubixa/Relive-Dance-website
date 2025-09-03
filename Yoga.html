@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoga Class - Relive Dance & Fitness Studio</title>
+    <meta
+      name="description"
+      content="Discover our yoga classes at Relive Dance & Fitness Studio in Mumbai. Improve flexibility, reduce stress, and enhance overall wellness."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Custom Styles -->
+    <style>
+      /* Yoga Page Specific Styles */
+      :root {
+        --primary-dark: #0f0a1a;
+        --secondary-dark: #1d1130;
+        --accent-pink: #e94584;
+        --accent-purple: #8a2be2;
+        --accent-blue: #6a5af9;
+        --text-light: #f5f5f5;
+        --gradient: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+        --gradient-2: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+      }
+      
+      body {
+        background-color: var(--primary-dark);
+        color: var(--text-light);
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      
+      /* Hero Section */
+      .yoga-hero {
+        margin-top: 50px;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        padding: 4rem 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .yoga-hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: var(--gradient);
+        opacity: 0.1;
+        filter: blur(40px);
+        z-index: -1;
+      }
+      
+      .yoga-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      
+      .yoga-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+      
+      .yoga-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #d8d8d8;
+      }
+      
+      .benefits-list {
+        margin: 2rem 0;
+      }
+      
+      .benefits-list li {
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+      }
+      
+      .benefits-list i {
+        color: var(--accent-pink);
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+      
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: var(--gradient);
+        color: white;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(233, 69, 132, 0.3);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      
+      .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: var(--gradient-2);
+        transition: all 0.3s ease;
+        z-index: -1;
+      }
+      
+      .cta-button:hover::before {
+        width: 100%;
+      }
+      
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(233, 69, 132, 0.5);
+      }
+      
+      .yoga-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transform: perspective(800px) rotateY(-10deg);
+        transition: transform 0.5s ease;
+      }
+      
+      .yoga-image:hover {
+        transform: perspective(800px) rotateY(0);
+      }
+      
+      .yoga-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      
+      .yoga-image:hover img {
+        transform: scale(1.05);
+      }
+      
+      /* Poses Section */
+      .poses-section {
+        padding: 6rem 2rem;
+        background: linear-gradient(to bottom, var(--primary-dark), var(--secondary-dark));
+        position: relative;
+      }
+      
+      .section-title {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+      
+      .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .section-title h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+      }
+      
+      .section-title p {
+        color: #d8d8d8;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      .poses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .pose-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .pose-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .pose-image {
+        height: 250px;
+        overflow: hidden;
+      }
+      
+      .pose-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .pose-card:hover .pose-image img {
+        transform: scale(1.1);
+      }
+      
+      .pose-content {
+        padding: 1.5rem;
+      }
+      
+      .pose-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: white;
+        display: flex;
+        align-items: center;
+      }
+      
+      .pose-card h3 span {
+        margin-left: auto;
+        font-size: 0.8rem;
+        color: var(--accent-pink);
+        font-weight: 500;
+      }
+      
+      .pose-benefits {
+        margin-top: 1rem;
+      }
+      
+      .pose-benefits li {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #d8d8d8;
+      }
+      
+      .pose-benefits i {
+        color: var(--accent-pink);
+        margin-right: 8px;
+        font-size: 0.8rem;
+      }
+      
+      /* Schedule Section */
+      .schedule-section {
+        padding: 6rem 2rem;
+        background-color: var(--secondary-dark);
+      }
+      
+      .schedule-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        padding: 2.5rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      
+      .schedule-day {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 1.5rem;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+      
+      .schedule-day:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-5px);
+      }
+      
+      .schedule-day h3 {
+        color: white;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--accent-pink);
+        display: inline-block;
+      }
+      
+      .schedule-time {
+        margin-bottom: 0.8rem;
+      }
+      
+      .schedule-time p {
+        margin: 0;
+        color: #d8d8d8;
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      .schedule-time span {
+        color: var(--accent-pink);
+        font-weight: 500;
+      }
+      
+      /* Benefits Section */
+      .benefits-section {
+        padding: 6rem 2rem;
+        background: linear-gradient(to bottom, var(--secondary-dark), var(--primary-dark));
+      }
+      
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .benefit-card {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 2.5rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .benefit-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+      
+      .benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .benefit-card:hover::before {
+        opacity: 0.1;
+      }
+      
+      .benefit-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+      }
+      
+      .benefit-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: white;
+      }
+      
+      .benefit-card p {
+        color: #d8d8d8;
+        font-size: 0.95rem;
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        padding: 8rem 2rem;
+        text-align: center;
+        background: linear-gradient(to right, rgba(15, 10, 26, 0.9), rgba(29, 17, 48, 0.9)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+      }
+      
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .cta-content h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+      
+      .cta-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        color: #d8d8d8;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .yoga-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        
+        .yoga-content h1 {
+          font-size: 2.8rem;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .yoga-content h1 {
+          font-size: 2.3rem;
+        }
+        
+        .section-title h2 {
+          font-size: 2rem;
+        }
+        
+        .schedule-container {
+          padding: 1.5rem;
+        }
+        
+        .cta-content h2 {
+          font-size: 2.5rem;
+        }
+      }
+      
+      /* Animation for elements */
+      [data-aos] {
+        transition: all 0.8s ease;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <img
+              src="./public/New_Logo__2_-removebg-preview.png"
+              alt="Relive Dance Academy Logo"
+            />
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./aboutpage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" >Studio Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="bollywood.html">Bollywood Dance</a>
+                <a href="Semi-classical.html">Semi-Classical Dance</a>
+                <a href="./Yoga.html">Yoga Class</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="./Pre-Recorded.html">Pre-recoded video</a>
+                <a href="./onlineturtorial.html">Zoom Online class</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./Wedding.html" class="nav-link">Sangeet By Ashwini</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Yoga Hero Section -->
+    <section class="yoga-hero">
+      <div class="yoga-container">
+        <div class="yoga-content" data-aos="fade-right">
+          <h1>Transform Your Life Through Yoga</h1>
+          <p>Yoga has many physical and mental health benefits including improved posture, flexibility, strength, balance and body awareness.</p>
+          
+          <ul class="benefits-list">
+            <li><i class="fas fa-heart"></i> Improved cardiovascular health</li>
+            <li><i class="fas fa-brain"></i> Reduced stress and anxiety</li>
+            <li><i class="fas fa-weight"></i> Increased strength and flexibility</li>
+            <li><i class="fas fa-balance-scale"></i> Better balance and coordination</li>
+            <li><i class="fas fa-smile"></i> Enhanced mental clarity and focus</li>
+          </ul>
+          
+          <p>Come join me on a journey to build a healthier and balanced YOU. Our yoga classes are designed for all levels, from beginners to advanced practitioners. Experience the transformation that comes from connecting mind, body, and spirit.</p>
+          
+          <a href="#contact" class="cta-button">Join Class Today</a>
+        </div>
+        
+        <div class="yoga-image" data-aos="fade-left">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Yoga Pose">
+        </div>
+      </div>
+    </section>
+
+    <!-- Yoga Poses Section -->
+    <section class="poses-section" id="poses">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Featured Yoga Poses</h2>
+        <p>Discover the transformative power of these essential yoga asanas</p>
+      </div>
+      
+      <div class="poses-grid">
+        <!-- Halasana -->
+        <div class="pose-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pose-image">
+            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Halasana - Plow Pose">
+          </div>
+          <div class="pose-content">
+            <h3>Halasana <span>The Plow Pose</span></h3>
+            <ul class="pose-benefits">
+              <li><i class="fas fa-check-circle"></i> Improves Digestion</li>
+              <li><i class="fas fa-check-circle"></i> Boosts Metabolism</li>
+              <li><i class="fas fa-check-circle"></i> Enhances Flexibility</li>
+              <li><i class="fas fa-check-circle"></i> Strengthens the Spine</li>
+              <li><i class="fas fa-check-circle"></i> Supports Thyroid Function</li>
+              <li><i class="fas fa-check-circle"></i> Improves Sleep Quality</li>
+              <li><i class="fas fa-check-circle"></i> Improves Blood Circulation</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Bhujangasana -->
+        <div class="pose-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="pose-image">
+            <img src="https://images.unsplash.com/photo-1512201078377-88a2ee4e0e6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Bhujangasana - Cobra Pose">
+          </div>
+          <div class="pose-content">
+            <h3>Bhujangasana <span>Cobra Pose</span></h3>
+            <ul class="pose-benefits">
+              <li><i class="fas fa-check-circle"></i> Therapeutic for Asthma</li>
+              <li><i class="fas fa-check-circle"></i> Stretches Chest & Lungs</li>
+              <li><i class="fas fa-check-circle"></i> Strengthens the Spine</li>
+              <li><i class="fas fa-check-circle"></i> Stretches the Shoulders</li>
+              <li><i class="fas fa-check-circle"></i> Improves Flexibility</li>
+              <li><i class="fas fa-check-circle"></i> Relieves Stress</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Setu Bandhasana -->
+        <div class="pose-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pose-image">
+            <img src="https://images.unsplash.com/photo-1591886803270-5fb5e5e5ce2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Setu Bandhasana - Bridge Pose">
+          </div>
+          <div class="pose-content">
+            <h3>Setu Bandhasana <span>Bridge Pose</span></h3>
+            <ul class="pose-benefits">
+              <li><i class="fas fa-check-circle"></i> Relieves Lower Back Pain</li>
+              <li><i class="fas fa-check-circle"></i> Improves Blood Circulation</li>
+              <li><i class="fas fa-check-circle"></i> Strengthens Core and Glutes</li>
+              <li><i class="fas fa-check-circle"></i> Reduces Stress and Anxiety</li>
+              <li><i class="fas fa-check-circle"></i> Boosts Flexibility</li>
+              <li><i class="fas fa-check-circle"></i> Improves Digestion</li>
+              <li><i class="fas fa-check-circle"></i> Promotes Better Sleep</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section" id="schedule">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Class Schedule</h2>
+        <p>Join our regular yoga sessions at convenient timings</p>
+      </div>
+      
+      <div class="schedule-container" data-aos="fade-up">
+        <div class="schedule-grid">
+          <div class="schedule-day">
+            <h3>Monday, Wednesday, Friday</h3>
+            <div class="schedule-time">
+              <p>Morning Session <span>10:00 - 11:00 AM</span></p>
+            </div>
+            <p class="schedule-note">All levels welcome</p>
+          </div>
+          
+          <div class="schedule-day">
+            <h3>Tuesday, Thursday, Saturday</h3>
+            <div class="schedule-time">
+              <p>Morning Session <span>7:00 - 8:00 AM</span></p>
+            </div>
+            <p class="schedule-note">Beginner friendly</p>
+          </div>
+          
+          <div class="schedule-day">
+            <h3>Class Format</h3>
+            <p>Both offline and online classes available</p>
+            <p>Small class sizes for personalized attention</p>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="tel:8828571648" class="cta-button">
+            <i class="fas fa-phone"></i> Call to Enroll: 88285-71648
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Benefits of Yoga Practice</h2>
+        <p>Transform your body and mind with regular yoga practice</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="benefit-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3>Physical Health</h3>
+          <p>Improves flexibility, strength, balance, and endurance. Helps with pain relief and boosts immune function.</p>
+        </div>
+        
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Mental Clarity</h3>
+          <p>Reduces stress and anxiety, improves focus and concentration, and promotes better sleep patterns.</p>
+        </div>
+        
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="benefit-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>Emotional Balance</h3>
+          <p>Helps manage emotions, increases self-awareness, and promotes a positive outlook on life.</p>
+        </div>
+        
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="benefit-icon">
+            <i class="fas fa-lungs"></i>
+          </div>
+          <h3>Respiratory Health</h3>
+          <p>Enhances lung capacity, improves breathing patterns, and increases oxygen supply to the body.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+      <div class="cta-content" data-aos="fade-up">
+        <h2>Begin Your Yoga Journey Today</h2>
+        <p>Join our community of yoga enthusiasts and experience the transformative power of yoga. Whether you're a beginner or an experienced practitioner, we have classes tailored for all levels.</p>
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:8828571648" class="cta-button">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+          <a href="https://wa.me/8828571648" class="cta-button" style="background: var(--gradient-2);">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+        
+        <div style="margin-top: 3rem; background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 10px; backdrop-filter: blur(10px);">
+          <h3 style="margin-bottom: 1rem;">Venue:</h3>
+          <p style="margin: 0;">Sneh Sadan, Subhash Hotel Lane, JB Nagar Near Metro Station, Andheri East, Mumbai</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Logo and About Section -->
+          <div class="footer-section">
+            <div class="footer-brand">
+              <img
+                src="./public/New_Logo__2_-removebg-preview.png"
+                alt="Relive Dance & Fitness"
+                class="footer-logo"
+              />
+            </div>
+            <p class="footer-about">
+              Empowering dancers of all levels to express themselves through
+              movement. Join our community and discover the joy of dance.
+            </p>
+            <div class="social-media">
+              <a
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+                class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/relive_danceandfitness/?igsh=MTA2ZHRhZThyYW5lMw%3D%3D#"
+                target="_blank"
+                aria-label="Instagram"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://youtube.com/@relivedanceandfitness479?si=TtNhZ-L85W6vYfJi"
+                target="_blank"
+                aria-label="YouTube"
+                class="social-link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="aboutpage.html" class="footer-link">About</a></li>
+              <li><a href="./InStudio Page.html" class="footer-link">Studio Classes</a></li>
+              <li>
+                <a href="./onlineturtorial.html" class="footer-link"
+                  >Online Classes</a
+                >
+              </li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Programs Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Programs</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="bollywood.html" class="footer-link">Bollywood Dance</a>
+              </li>
+              <li><a href="#" class="footer-link">Semi-Classical</a></li>
+              <li>
+                <a href="./Wedding.html" class="footer-link"
+                  >Sangeet By Ashwini</a
+                >
+              </li>
+              <li><a href="#" class="footer-link">Yoga Class</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Info</h4>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="contact-text">
+                  57/4, Sneh Sadan, Subhash Hotel lane, near J.B Nagar metro
+                  station, JB Nagar, Andheri East, Mumbai- 400059
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p class="contact-text">+91 8828571648</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p class="contact-text">relivedanceandfitness@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2025 Relive Dance & Fitness. All rights reserved.
+          </p>
+          <div class="legal-links">
+            <a href="#" class="legal-link">Privacy Policy</a>
+            <a href="#" class="legal-link">Terms of Service</a>
+            <a href="#" class="legal-link">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Pre-recorded Classes Floating Button -->
+    <a
+      href="./Pre-recoded"
+      class="prerecorded-float"
+      aria-label="Pre-recorded classes"
+    >
+      <div class="star-text">What's New</div>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/8828571648"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="Contact us on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <div class="whatsapp-tooltip">Chat with us</div>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Initialize AOS animations
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 100
+        });
+      });
+    </script>
+
+  </body>
+</html>

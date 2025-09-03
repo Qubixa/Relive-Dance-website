@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Zoom Classes - Relive Dance & Fitness Studio</title>
+    <meta name="description" content="Learn dance from the comfort of your home with Relive Dance & Fitness Studio's online Zoom classes. Professional instruction for all levels.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    /* Online Classes Specific Styles */
+    .online-hero {
+        background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1547153760-73fcad3c3ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .online-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+    
+    .online-hero h1 {
+        font-family: 'Playfair', serif;
+        font-size: 4rem;
+        margin-bottom: 25px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        line-height: 1.2;
+    }
+    
+    .online-hero p {
+        font-size: 1.3rem;
+        max-width: 800px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+        font-weight: 300;
+    }
+    
+    .hero-highlight {
+        color: #ff4d94;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .hero-highlight:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #ff4d94, #673ab7);
+        border-radius: 3px;
+    }
+    
+    .hero-cta {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .cta-primary {
+        background: linear-gradient(135deg, #ff4d94, #673ab7);
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(255, 77, 148, 0.4);
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+    
+    .cta-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 77, 148, 0.5);
+    }
+    
+    .cta-secondary {
+        background: transparent;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+    
+    .cta-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+    }
+    
+    .features-section {
+        padding: 40px 20px;
+        background: #0a0a0a;
+    }
+    
+    .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+    
+    .features-content h2 {
+        font-family: 'Playfair', serif;
+        font-size: 3rem;
+        margin-bottom: 30px;
+        color: white;
+        line-height: 1.2;
+    }
+    
+    .features-content p {
+        color: #ccc;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+    
+    .features-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .features-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: white;
+        font-size: 1.1rem;
+    }
+    
+    .features-list i {
+        color: #ff4d94;
+        margin-right: 15px;
+        font-size: 1.5rem;
+        background: rgba(255, 77, 148, 0.1);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .features-visual {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .laptop-mockup {
+        max-width: 600px;
+        width: 100%;
+        position: relative;
+    }
+    
+    .laptop-screen {
+        background: #272727;
+        border-radius: 12px 12px 0 0;
+        padding: 10px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .laptop-screen-inner {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .laptop-base {
+        width: 100%;
+        height: 20px;
+        background: #333;
+        border-radius: 0 0 5px 5px;
+        margin-top: -5px;
+        position: relative;
+    }
+    
+    .laptop-base:after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 5px;
+        background: #222;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0 0 5px 5px;
+    }
+    
+    .zoom-interface {
+        background: white;
+        width: 90%;
+        height: 90%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .zoom-header {
+        background: #0e71eb;
+        color: white;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.9rem;
+    }
+    
+    .zoom-logo {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+    }
+    
+    .zoom-logo i {
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+    
+    .zoom-main {
+        flex: 1;
+        display: flex;
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .instructor-video {
+        flex: 2;
+        background: linear-gradient(135deg, #ec008c, #673ab7);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: relative;
+    }
+    
+    .instructor-video i {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    
+    .participants {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .participant {
+        background: #f0f0f0;
+        border-radius: 8px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #555;
+    }
+    
+    .zoom-controls {
+        background: #f5f5f5;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .control-button {
+        background: #ddd;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+    
+    .end-call {
+        background: #f2473d;
+        color: white;
+    }
+    
+    .benefits-section {
+        padding: 100px 20px;
+        background: #111;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .benefits-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 30% 70%, rgba(255, 77, 148, 0.1), transparent 70%);
+        pointer-events: none;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 70px;
+        color: white;
+        font-family: 'Playfair', serif;
+        font-size: 2.8rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff4d94, #673ab7);
+        border-radius: 2px;
+    }
+    
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .benefit-card {
+        background: rgba(30, 30, 30, 0.7);
+        border-radius: 16px;
+        padding: 40px 30px;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .benefit-card:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, #ff4d94, #673ab7);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .benefit-card:hover:before {
+        transform: scaleX(1);
+    }
+    
+    .benefit-icon {
+        background: linear-gradient(135deg, #ff4d94, #673ab7);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 25px;
+        color: white;
+        font-size: 2rem;
+        transition: all 0.3s ease;
+    }
+    
+    .benefit-card:hover .benefit-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
+    
+    .benefit-card h3 {
+        margin-bottom: 20px;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .benefit-card p {
+        color: #ccc;
+        line-height: 1.7;
+        font-size: 1.05rem;
+    }
+    
+    .how-it-works {
+        padding: 100px 20px;
+        background: #0a0a0a;
+        position: relative;
+    }
+    
+    .how-it-works:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(103, 58, 183, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .steps-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        position: relative;
+    }
+    
+    .steps-container:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        width: 3px;
+        background: linear-gradient(to bottom, #ff4d94, #673ab7);
+        z-index: 1;
+    }
+    
+    .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .step-number {
+        background: linear-gradient(135deg, #ff4d94, #673ab7);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        flex-shrink: 0;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(255, 77, 148, 0.3);
+    }
+    
+    .step-content {
+        flex: 1;
+        background: rgba(30, 30, 30, 0.7);
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 4px solid #ff4d94;
+    }
+    
+    .step-content h3 {
+        margin-bottom: 15px;
+        color: white;
+        font-size: 1.4rem;
+    }
+    
+    .step-content p {
+        color: #ccc;
+        line-height: 1.7;
+        margin: 0;
+    }
+    
+    .cta-section {
+        background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1547153760-73fcad3c3ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover fixed;
+        padding: 120px 20px;
+        text-align: center;
+        color: white;
+        position: relative;
+    }
+    
+    .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .cta-content h2 {
+        font-family: 'Playfair', serif;
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .cta-content p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        line-height: 1.7;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #ff4d94, #673ab7);
+        color: white;
+        padding: 18px 45px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(255, 77, 148, 0.4);
+        font-size: 1.1rem;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .cta-button:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
+    }
+    
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 77, 148, 0.5);
+    }
+    
+    .cta-button:hover:before {
+        left: 100%;
+    }
+    
+    @media (max-width: 992px) {
+        .features-container {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        
+        .features-content h2 {
+            text-align: center;
+        }
+        
+        .features-content p {
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .online-hero h1 {
+            font-size: 2.8rem;
+        }
+        
+        .online-hero p {
+            font-size: 1.1rem;
+        }
+        
+        .features-content h2 {
+            font-size: 2.5rem;
+        }
+        
+        .step {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+        
+        .steps-container:before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .step-content {
+            border-left: none;
+            border-top: 4px solid #ff4d94;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+        }
+        
+        .hero-cta {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cta-primary, .cta-secondary {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+        }
+        
+        .laptop-screen-inner {
+            height: 250px;
+        }
+        
+        .instructor-video i {
+            font-size: 2rem;
+        }
+        
+        .participant {
+            height: 50px;
+            font-size: 0.7rem;
+        }
+        
+        .zoom-header {
+            font-size: 0.7rem;
+            padding: 8px 10px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .online-hero {
+            padding: 80px 20px;
+        }
+        
+        .online-hero h1 {
+            font-size: 2.2rem;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+        }
+        
+        .benefit-card {
+            padding: 30px 20px;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Header & Navigation -->
+  <header class="header" id="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <img
+              src="./public/New_Logo__2_-removebg-preview.png"
+              alt="Relive Dance Academy Logo"
+            />
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./aboutpage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" >Studio Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="bollywood.html">Bollywood Dance</a>
+                <a href="Semi-classical.html">Semi-Classical Dance</a>
+                <a href="./Yoga.html">Yoga Class</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="./Pre-Recorded.html">Pre-recoded video</a>
+                <a href="./onlineturtorial.html">Zoom Online class</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./Wedding.html" class="nav-link">Sangeet By Ashwini</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="online-hero">
+            <div class="online-hero-content">
+                <h1>Dance From <span class="hero-highlight">Anywhere</span> with Our Zoom Classes</h1>
+                <p>Experience professional dance instruction with real-time feedback from the comfort of your home. Join our vibrant virtual dance community today!</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="cta-primary">Start Dancing Now</a>
+                    <a href="#how-it-works" class="cta-secondary">How It Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="features-container">
+                <div class="features-content" data-aos="fade-right">
+                    <h2>Why Our Virtual Classes Stand Out</h2>
+                    <p>Our online Zoom dance classes bring the studio experience directly to you. With expert instructors, interactive sessions, and a supportive community, you'll never miss a beat.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Live interaction with professional instructors</li>
+                        <li><i class="fas fa-check-circle"></i> Small class sizes for personalized attention</li>
+                        <li><i class="fas fa-check-circle"></i> Recorded sessions available for review</li>
+                        <li><i class="fas fa-check-circle"></i> Connect with dancers from around the world</li>
+                    </ul>
+                </div>
+                <div class="features-visual" data-aos="fade-left">
+                    <div class="laptop-mockup">
+                        <div class="laptop-screen">
+                            <div class="laptop-screen-inner">
+                                <div class="zoom-interface">
+                                    <div class="zoom-header">
+                                        <div class="zoom-logo">
+                                            <i class="fas fa-video"></i>
+                                            <span>Zoom Meeting</span>
+                                        </div>
+                                        <div class="zoom-meeting-id">Relive Dance Class | Meeting ID: 123 456 7890</div>
+                                    </div>
+                                    <div class="zoom-main">
+                                        <div class="instructor-video">
+                                            <i class="fas fa-user-circle"></i>
+                                            <h3>Your Instructor: Ashwini</h3>
+                                            <p>Live - Teaching Bollywood Moves</p>
+                                        </div>
+                                        <div class="participants">
+                                            <div class="participant">Student 1</div>
+                                            <div class="participant">Student 2</div>
+                                            <div class="participant">Student 3</div>
+                                        </div>
+                                    </div>
+                                    <div class="zoom-controls">
+                                        <div class="control-button"><i class="fas fa-microphone"></i></div>
+                                        <div class="control-button"><i class="fas fa-video"></i></div>
+                                        <div class="control-button"><i class="fas fa-users"></i></div>
+                                        <div class="control-button end-call"><i class="fas fa-phone"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="laptop-base"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <h2 class="section-title">Benefits of Online Dance Classes</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Learn From Comfort</h3>
+                    <p>No commute needed. Practice in your favorite space without worrying about traffic or parking.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Choose class times that work with your routine. We offer multiple sessions throughout the day.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Personal Attention</h3>
+                    <p>Small class sizes ensure you receive individualized feedback and corrections from our instructors.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Access Anywhere</h3>
+                    <p>Join our classes from any location. All you need is a stable internet connection and Zoom app.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="benefit-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Recorded Sessions</h3>
+                    <p>Missed a class? Access recorded sessions to practice at your own pace and never fall behind.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>Connect with fellow dancers in our virtual community. Share progress and motivate each other.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works" id="how-it-works">
+            <h2 class="section-title">How Our Online Classes Work</h2>
+            <div class="steps-container">
+                <div class="step" data-aos="fade-right">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Register for a Class</h3>
+                        <p>Choose from our variety of dance styles and time slots that work best for you. Complete your registration and payment online.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-left">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Receive Zoom Link</h3>
+                        <p>After registration, you'll receive a confirmation email with the Zoom meeting link and password. Save this information for class time.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-right">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Set Up Your Space</h3>
+                        <p>Clear a small area for movement, ensure your device is charged, and test your audio/video settings before class begins.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-left">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Join The Live Class</h3>
+                        <p>Click the Zoom link 5-10 minutes before class starts. Our instructor will welcome you and guide you through the session.</p>
+                    </div>
+                </div>
+                <div class="step" data-aos="fade-right">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Dance & Enjoy</h3>
+                        <p>Follow along with the live instruction, ask questions, and receive real-time feedback just like in a physical studio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Dance From Home?</h2>
+                <p>Join our next Zoom dance class and experience the joy of dancing without leaving your home. All levels are welcome!</p>
+                <a href="contact.html" class="cta-button">Book Your Spot Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+     <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Logo and About Section -->
+          <div class="footer-section">
+            <div class="footer-brand">
+              <img
+                src="./public/New_Logo__2_-removebg-preview.png"
+                alt="Relive Dance & Fitness"
+                class="footer-logo"
+              />
+            </div>
+            <p class="footer-about">
+              Empowering dancers of all levels to express themselves through
+              movement. Join our community and discover the joy of dance.
+            </p>
+            <div class="social-media">
+              <a
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+                class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/relive_danceandfitness/?igsh=MTA2ZHRhZThyYW5lMw%3D%3D#"
+                target="_blank"
+                aria-label="Instagram"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://youtube.com/@relivedanceandfitness479?si=TtNhZ-L85W6vYfJi"
+                target="_blank"
+                aria-label="YouTube"
+                class="social-link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="aboutpage.html" class="footer-link">About</a></li>
+              <li><a href="./InStudio Page.html" class="footer-link">Studio Classes</a></li>
+              <li>
+                <a href="./onlineturtorial.html" class="footer-link"
+                  >Online Classes</a
+                >
+              </li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Programs Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Programs</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="bollywood.html" class="footer-link">Bollywood Dance</a>
+              </li>
+              <li><a href="#" class="footer-link">Semi-Classical</a></li>
+              <li>
+                <a href="./Wedding.html" class="footer-link"
+                  >Sangeet By Ashwini</a
+                >
+              </li>
+              <li><a href="#" class="footer-link">Yoga Class</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Info</h4>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="contact-text">
+                  57/4, Sneh Sadan, Subhash Hotel lane, near J.B Nagar metro
+                  station, JB Nagar, Andheri East, Mumbai- 400059
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p class="contact-text">+91 8828571648</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p class="contact-text">relivedanceandfitness@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2025 Relive Dance & Fitness. All rights reserved.
+          </p>
+          <div class="legal-links">
+            <a href="#" class="legal-link">Privacy Policy</a>
+            <a href="#" class="legal-link">Terms of Service</a>
+            <a href="#" class="legal-link">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Pre-recorded Classes Floating Button -->
+    <a href="./Pre-recoded" class="prerecorded-float" aria-label="Pre-recorded classes">
+        <div class="star-text">What's New</div>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8828571648" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Chat with us</div>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script type="module" src="script.js"></script>
+    
+    <script>
+        // Initialize AOS animations
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+</body>
+</html>

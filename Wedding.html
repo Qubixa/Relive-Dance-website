@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding - Relive Dance & Fitness Studio</title>
+    <meta name="description" content="Discover the story behind Relive Dance & Fitness Studio - Where movement meets memory. Professional dance training in Mumbai.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Color Variables */
+    :root {
+        --purple-primary: #9c27b0;
+        --purple-secondary: #7b1fa2;
+        --purple-light: #ba68c8;
+        --purple-dark: #6a1b9a;
+        --text-light: #ffffff;
+        --text-dark: #333333;
+        --bg-dark: #121212;
+        --bg-darker: #0a0a0a;
+        --card-bg: #1e1e1e;
+        --border-color: #333333;
+    }
+
+    /* Poster Section */
+    .poster-section {
+        padding: 60px 0;
+        background: var(--bg-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .poster-container {
+        max-width: 1900px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .poster-image {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        display: block;
+    }
+
+    /* Wedding Services Section - Dark Theme */
+    .wedding-services {
+        padding: 40px 0;
+        background: var(--bg-dark);
+    }
+
+    .wedding-section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .wedding-section-header h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        font-family: 'Playfair', serif;
+        position: relative;
+        display: inline-block;
+    }
+
+    .wedding-section-header h2:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--purple-primary);
+    }
+
+    .wedding-section-header p {
+        font-size: 1.2rem;
+        color: #aaaaaa;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .service-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        position: relative;
+        border: 1px solid var(--border-color);
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-image {
+        height: 250px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .service-image img {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-image img {
+        transform: scale(1.05);
+    }
+
+    .service-content {
+        padding: 25px;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-family: 'Playfair', serif;
+    }
+
+    .service-description {
+        color: #bbbbbb;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .service-features {
+        list-style: none;
+        margin-bottom: 25px;
+    }
+
+    .service-features li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        color: #aaaaaa;
+    }
+
+    .service-features i {
+        color: var(--purple-light);
+        font-size: 0.9rem;
+    }
+
+    .service-price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--purple-light);
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .service-btn {
+        width: 100%;
+        background: var(--purple-primary);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .service-btn:hover {
+        background: var(--purple-secondary);
+    }
+
+    /* NEW: Wedding Sangeet Section */
+    .wedding-sangeet {
+        padding: 100px 0;
+        background: var(--bg-dark);
+    }
+
+    .sangeet-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .sangeet-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .sangeet-poster {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transform: rotate(-2deg);
+        transition: transform 0.5s ease;
+        border: 3px solid var(--purple-light);
+    }
+
+    .sangeet-poster:hover {
+        transform: rotate(0deg) scale(1.02);
+    }
+
+    .sangeet-poster img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sangeet-info {
+        color: var(--text-light);
+    }
+
+    .sangeet-info h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'Playfair', serif;
+        color: var(--purple-light);
+    }
+
+    .sangeet-info p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        color: #cccccc;
+    }
+
+    .sangeet-features {
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .sangeet-features li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+
+    .sangeet-features i {
+        color: var(--purple-primary);
+        font-size: 1.3rem;
+        width: 25px;
+    }
+
+    .sangeet-cta {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .sangeet-btn {
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-primary {
+        background: var(--purple-primary);
+        color: white;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background: var(--purple-secondary);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--purple-light);
+        border: 2px solid var(--purple-primary);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(156, 39, 176, 0.1);
+        transform: translateY(-3px);
+    }
+
+    /* Gallery Section - UPDATED */
+    .gallery-section {
+        padding: 100px 0;
+        background: var(--bg-darker);
+        position: relative;
+    }
+    
+    .gallery-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+    }
+    
+    .gallery-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    .gallery-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 40px 0;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+    
+    .gallery-carousel::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
+    }
+    
+    .gallery-item {
+        flex: 0 0 auto;
+        width: 350px;
+        scroll-snap-align: start;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+        transform: scale(1.03);
+    }
+    
+    .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+    }
+    
+    /* UPDATED: Carousel Navigation - Arrows on sides */
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--purple-primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.5rem;
+        border: none;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .carousel-arrow:hover {
+        background: var(--purple-secondary);
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .prev-arrow {
+        left: -30px;
+    }
+    
+    .next-arrow {
+        right: -30px;
+    }
+    
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+    
+    .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    
+    .carousel-dot.active {
+        background: var(--purple-primary);
+        transform: scale(1.2);
+    }
+
+    /* Testimonials Section - Dark Theme */
+    .wedding-testimonials {
+        padding: 100px 0;
+        background: var(--bg-darker);
+        text-align: center;
+        color: white;
+    }
+
+    .testimonial-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        border: 1px solid var(--border-color);
+    }
+
+    .testimonial-card:before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 5rem;
+        color: rgba(156, 39, 176, 0.2);
+        font-family: serif;
+        line-height: 1;
+    }
+
+    .testimonial-text {
+        font-size: 1.2rem;
+        color: #eeeeee;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        font-style: italic;
+    }
+
+    .author-info h4 {
+        font-size: 1.2rem;
+        color: white;
+        margin-bottom: 5px;
+    }
+
+    .author-info p {
+        color: #bbbbbb;
+        font-size: 0.9rem;
+    }
+
+    /* CTA Section - Dark Theme */
+    .wedding-cta {
+        padding: 100px 0;
+        background: linear-gradient(135deg, var(--purple-dark) 0%, var(--bg-darker) 100%);
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .wedding-cta:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+        background-size: cover;
+        opacity: 0.15;
+        z-index: 0;
+    }
+
+    .wedding-cta .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .wedding-cta h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        font-family: 'Playfair', serif;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .wedding-cta p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+        color: #dddddd;
+    }
+
+    .cta-btn {
+        background: var(--purple-primary);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 1;
+    }
+
+    .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        background: var(--purple-secondary);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+        .prev-arrow {
+            left: 10px;
+        }
+        
+        .next-arrow {
+            right: 10px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .sangeet-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        
+        .sangeet-poster {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            width: 300px;
+        }
+        
+        .carousel-arrow {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .wedding-section-header h2 {
+            font-size: 2.2rem;
+        }
+        
+        .sangeet-info h2 {
+            font-size: 2.2rem;
+        }
+        
+        .service-image {
+            height: 200px;
+        }
+        
+        .sangeet-cta {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .sangeet-btn {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .gallery-item {
+            width: 280px;
+        }
+        
+        .carousel-arrow {
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+        }
+        
+        .prev-arrow {
+            left: 5px;
+        }
+        
+        .next-arrow {
+            right: 5px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .sangeet-info h2 {
+            font-size: 1.8rem;
+        }
+        
+        .gallery-item {
+            width: 250px;
+        }
+        
+        .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
+    }
+</style>
+<body>
+ 
+
+    <!-- Header & Navigation -->
+  <header class="header" id="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <img
+              src="./public/New_Logo__2_-removebg-preview.png"
+              alt="Relive Dance Academy Logo"
+            />
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./aboutpage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" >Studio Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="bollywood.html">Bollywood Dance</a>
+                <a href="Semi-classical.html">Semi-Classical Dance</a>
+                <a href="./Yoga.html">Yoga Class</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="./Pre-Recorded.html">Pre-recoded video</a>
+                <a href="./onlineturtorial.html">Zoom Online class</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./Wedding.html" class="nav-link">Sangeet By Ashwini</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Poster Section -->
+    <section class="poster-section">
+        <div class="poster-container" style="margin-top: 40px;">
+            <img src="./new images/Grid image.png" alt="Sangeet by Ashwini" class="poster-image">
+        </div>
+    </section>
+
+    <!-- Wedding Services Section -->
+    <section class="wedding-services">
+        <div class="container">
+            <div class="wedding-section-header" data-aos="fade-up">
+                <h2>Our Wedding Services</h2>
+                <p>We specialize in creating magical dance moments for your wedding celebrations. From intimate first dances to grand sangeet performances, we'll make your wedding unforgettable.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- First Dance Choreography -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-image">
+                        <img src="./new images/First dance image.jpg" alt="First Dance Choreography">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">First Dance Choreography</h3>
+                        <p class="service-description">Custom Choreography tailored to your song, skill level, and vision for that perfect first dance as a married couple.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Personalized routine</li>
+                            <li><i class="fas fa-check"></i> Song selection guidance</li>
+                            <li><i class="fas fa-check"></i> Confidence coaching</li>
+                            <li><i class="fas fa-check"></i> 1-5 sessions package</li>
+                        </ul>
+                        <!-- <span class="service-price">₹15,000</span> -->
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Sangeet Performance -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-image">
+                        <img src="./new images/Sangeet Performance.jpg" alt="Sangeet Performance">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Sangeet Performance</h3>
+                        <p class="service-description">High-Energy Bollywood or fusion performances for your sangeet ceremony that will wow your guests.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Full group training</li>
+                            <li><i class="fas fa-check"></i> Costume guidance</li>
+                            <li><i class="fas fa-check"></i> Music editing</li>
+                            <li><i class="fas fa-check"></i> 5-10 sessions package</li>
+                        </ul>
+                        <!-- <span class="service-price">₹25,000</span> -->
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Bridal Party Dance -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-image">
+                        <img src="./new images/Cocktail party dance.jpg" alt="Bridal Party Dance">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Cocktail Party Dance</h3>
+                        <p class="service-description">Fun and energetic routines for your entire bridal party to perform together during the reception.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Group choreography</li>
+                            <li><i class="fas fa-check"></i> All skill levels welcome</li>
+                            <li><i class="fas fa-check"></i> Rehearsal coordination</li>
+                            <li><i class="fas fa-check"></i> 1-5 sessions package</li>
+                        </ul>
+                        <!-- <span class="service-price">₹18,000</span> -->
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Wedding Sangeet Section -->
+    <section class="wedding-sangeet">
+        <div class="sangeet-container">
+            <div class="sangeet-content">
+                <div class="sangeet-poster" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./public/poster.jpg" alt="Sangeet by Ashwini - Wedding Choreography">
+                </div>
+                
+                <div class="sangeet-info" data-aos="fade-left" data-aos-delay="200">
+                    <h2>Sangeet By Ashwini</h2>
+                    <p>Make your wedding celebrations unforgettable with our professional sangeet choreography services. We create magical moments that you and your guests will cherish forever.</p>
+                    
+                    <ul class="sangeet-features">
+                        <li><i class="fas fa-music"></i> Complete Sangeet Choreography</li>
+                        <li><i class="fas fa-heart"></i> Haldi Ceremony Performances</li>
+                        <li><i class="fas fa-hands"></i> Mehndi Dance Routines</li>
+                        <li><i class="fas fa-ring"></i> Bride and Groom Dance</li>
+                        <li><i class="fas fa-star"></i> Best Song Selection</li>
+                        <li><i class="fas fa-smile"></i> Simple Choreography & Lots of Entertainment</li>
+                    </ul>
+                    
+                    <div class="sangeet-cta">
+                        <a href="tel:8828571648" class="sangeet-btn btn-primary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="https://www.instagram.com/sangeetbyashwini" target="_blank" class="sangeet-btn btn-secondary">
+                            <i class="fab fa-instagram"></i> Follow Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="wedding-section-header" data-aos="fade-up">
+                <h2>Our Gallery</h2>
+                <p>Take a look at some of our memorable wedding performances and choreography sessions</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-wrapper">
+                    <!-- Carousel arrows positioned on sides -->
+                    <button class="carousel-arrow prev-arrow">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="gallery-carousel">
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                            <img src="./new images/Wedding Gallery1.jpg" alt="Wedding Performance">
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./new images/Wedding gallery2.jpg" alt="Sangeet Choreography">
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./new images/wedding gallery3.jpg" alt="Bridal Dance">
+                        </div>
+                          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                            <img src="./new images/sangeet g1.jpg" alt="Sangeet Choreography">
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./new images/Sangeet g2.jpg" alt="">
+                        </div>
+                         <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                            <img src="./new images/Sangeet g3.jpg" alt="">
+                        </div>
+                        
+                    </div>
+                    
+                    <button class="carousel-arrow next-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-dots">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="wedding-testimonials">
+        <div class="container">
+            <div class="wedding-section-header" data-aos="fade-up">
+                <h2>Happy Couples</h2>
+                <p>What our couples say about their wedding dance experience</p>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <p class="testimonial-text">Relive Dance Studio made our first dance absolutely magical! We had no dance experience but they created a beautiful, simple routine that looked stunning. Our guests thought we'd been taking lessons for months!</p>
+                <div class="testimonial-author">
+                    <!-- <div class="author-image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Priya & Rohan">
+                    </div> -->
+                    <div class="author-info">
+                        <h4>Priya & Rohan</h4>
+                        <p>December 2023 Wedding</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="wedding-cta">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2>Ready for Your Perfect Wedding Dance?</h2>
+                <p>Contact us today to schedule your consultation and let's create something beautiful together for your special day.</p>
+                <button class="cta-btn">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+   <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Logo and About Section -->
+          <div class="footer-section">
+            <div class="footer-brand">
+              <img
+                src="./public/New_Logo__2_-removebg-preview.png"
+                alt="Relive Dance & Fitness"
+                class="footer-logo"
+              />
+            </div>
+            <p class="footer-about">
+              Empowering dancers of all levels to express themselves through
+              movement. Join our community and discover the joy of dance.
+            </p>
+            <div class="social-media">
+              <a
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+                class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/relive_danceandfitness/?igsh=MTA2ZHRhZThyYW5lMw%3D%3D#"
+                target="_blank"
+                aria-label="Instagram"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://youtube.com/@relivedanceandfitness479?si=TtNhZ-L85W6vYfJi"
+                target="_blank"
+                aria-label="YouTube"
+                class="social-link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="aboutpage.html" class="footer-link">About</a></li>
+              <li><a href="./InStudio Page.html" class="footer-link">Studio Classes</a></li>
+              <li>
+                <a href="./onlineturtorial.html" class="footer-link"
+                  >Online Classes</a
+                >
+              </li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Programs Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Programs</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="bollywood.html" class="footer-link">Bollywood Dance</a>
+              </li>
+              <li><a href="#" class="footer-link">Semi-Classical</a></li>
+              <li>
+                <a href="./Wedding.html" class="footer-link"
+                  >Sangeet By Ashwini</a
+                >
+              </li>
+              <li><a href="#" class="footer-link">Yoga Class</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Info</h4>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="contact-text">
+                  57/4, Sneh Sadan, Subhash Hotel lane, near J.B Nagar metro
+                  station, JB Nagar, Andheri East, Mumbai- 400059
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p class="contact-text">+91 8828571648</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p class="contact-text">relivedanceandfitness@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2025 Relive Dance & Fitness. All rights reserved.
+          </p>
+          <div class="legal-links">
+            <a href="#" class="legal-link">Privacy Policy</a>
+            <a href="#" class="legal-link">Terms of Service</a>
+            <a href="#" class="legal-link">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+     <!-- Pre-recorded Classes Floating Button -->
+    <a href="./Pre-recoded" class="prerecorded-float" aria-label="Pre-recorded classes">
+        <div class="star-text">What's New</div>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8828571648" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Chat with us</div>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script type="module" src="script.js"></script>
+
+      <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Gallery Carousel Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.gallery-carousel');
+            const items = document.querySelectorAll('.gallery-item');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.querySelector('.prev-arrow');
+            const nextBtn = document.querySelector('.next-arrow');
+            
+            let currentIndex = 0;
+            const itemWidth = 350; // Width of gallery item + gap
+            const itemsToShow = Math.floor(carousel.offsetWidth / itemWidth);
+            
+            // Function to update carousel position
+            function updateCarousel() {
+                carousel.scrollTo({
+                    left: currentIndex * itemWidth,
+                    behavior: 'smooth'
+                });
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Next button click event
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < items.length - itemsToShow) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+            
+            // Previous button click event
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+            
+            // Dot click events
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+            
+            // Auto-play carousel (optional)
+            setInterval(() => {
+                if (currentIndex < items.length - itemsToShow) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

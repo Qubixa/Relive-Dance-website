@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semi-Classical Classes - Relive Dance & Fitness Studio</title>
+    <meta name="description" content="Discover our in-studio dance and fitness classes at Relive Dance & Fitness Studio in Mumbai. Professional training in Bollywood, Semi-Classical, Kids Dance, Yoga and more.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Semi-Classical Page Specific Styles */
+        :root {
+            --primary-color: rgba(250, 23, 244, 0.8);
+            --primary-light: rgba(250, 23, 244, 0.6);
+            --primary-dark: rgba(250, 23, 244, 1);
+            --dark-bg: #121212;
+            --dark-card: #1e1e1e;
+            --text-light: #f8f8f8;
+            --text-muted: #b3b3b3;
+        }
+        
+        /* body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        } */
+        
+        .semi-classical-hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.9), rgba(30, 30, 30, 0.9));
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Playfair', serif;
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--primary-color), #ff6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(250, 23, 244, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(250, 23, 244, 0.5);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair', serif;
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+            bottom: 0;
+            left: 20%;
+        }
+        
+        .about-semi-classical {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .features-section {
+            padding: 4rem 2rem;
+            background-color: var(--dark-card);
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(250, 23, 244, 0.3);
+            border: 1px solid rgba(250, 23, 244, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(250, 23, 244, 0.5);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+        }
+        
+        .classes-section {
+            padding: 4rem 2rem;
+        }
+        
+        .classes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .classes-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .class-card {
+            background-color: var(--dark-card);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .class-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .class-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .class-card:hover .class-image img {
+            transform: scale(1.1);
+        }
+        
+        .class-details {
+            padding: 1.5rem;
+        }
+        
+        .class-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        .class-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .class-details p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        .class-cta {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .class-cta:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .testimonials-section {
+            padding: 4rem 2rem;
+            background-color: var(--dark-card);
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--dark-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-family: 'Playfair', serif;
+            font-size: 5rem;
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-details h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .author-details p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .faq-section {
+            padding: 4rem 2rem;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .faq-answer {
+            padding-bottom: 1.5rem;
+            color: var(--text-muted);
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .cta-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.9), rgba(30, 30, 30, 0.9));
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+  <header class="header" id="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <img
+              src="./public/New_Logo__2_-removebg-preview.png"
+              alt="Relive Dance Academy Logo"
+            />
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./aboutpage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" >Studio Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="bollywood.html">Bollywood Dance</a>
+                <a href="Semi-classical.html">Semi-Classical Dance</a>
+                <a href="./Yoga.html">Yoga Class</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="./Pre-Recorded.html">Pre-recoded video</a>
+                <a href="./onlineturtorial.html">Zoom Online class</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./Wedding.html" class="nav-link">Sangeet By Ashwini</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="semi-classical-hero">
+        <div class="hero-content">
+            <h1>Semi-Classical Dance</h1>
+            <p>Where Movement Meets Memory</p>
+        </div>
+    </section>
+
+    <!-- About Semi-Classical Section -->
+    <section class="about-semi-classical">
+        <div class="about-content">
+            <div class="about-text">
+                <h3>What is Semi-Classical Dance?</h3>
+                <p>Semi-classical dance is a beautiful fusion that maintains the grace and technique of classical Indian dance forms while incorporating contemporary elements for wider appeal. It preserves the essence of traditional dance while allowing for more creative freedom and expression.</p>
+                <p>At Relive Dance & Fitness, our semi-classical classes are designed to introduce students to the foundational aspects of classical dance while making it accessible and enjoyable for everyone, regardless of prior experience.</p>
+                <p>Our expert instructors blend elements from Kathak, Bharatanatyam, and other classical forms with modern musicality to create a unique dance experience that is both culturally rich and creatively fulfilling.</p>
+            </div>
+            <div class="about-image">
+                <img src="./new images/g0.jpg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="section-title">
+            <h2>Why Choose Our Semi-Classical Classes</h2>
+        </div>
+        <div class="features-container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Expressive Mudras</h3>
+                    <p>Learn the beautiful hand gestures and expressions that form the core of Indian classical dance traditions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Rhythm & Taal</h3>
+                    <p>Develop a strong sense of rhythm and timing through traditional Indian musical patterns and compositions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Cultural Connection</h3>
+                    <p>Connect with India's rich cultural heritage while enjoying a contemporary approach to traditional art forms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section class="classes-section" id="classes">
+        <div class="section-title">
+            <h2>Our Semi-Classical Programs</h2>
+        </div>
+        <div class="classes-container">
+            <div class="classes-tabs">
+                <button class="tab-button active" data-tab="beginner">Beginner to Advanced</button>
+                <!-- <button class="tab-button" data-tab="intermediate">Intermediate</button> -->
+                <!-- <button class="tab-button" data-tab="advanced">Advanced</button> -->
+                <button class="tab-button" data-tab="workshops">Workshops</button>
+            </div>
+            
+            <div class="tab-content active" id="beginner">
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1547153760-73fcb6c9bf53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Beginner Semi-Classical Class">
+                    </div>
+                    <div class="class-details">
+                        <h3>Foundations of Semi-Classical</h3>
+                        <div class="class-info">
+                            <span><i class="far fa-clock"></i> 8 weeks</span>
+                            <span><i class="fas fa-user"></i> Small groups</span>
+                        </div>
+                        <p>Perfect for beginners, this course introduces basic postures, footwork, hand gestures, and expressions. Build a strong foundation in semi-classical dance techniques.</p>
+                        <a href="#" class="class-cta">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="tab-content" id="intermediate">
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1543946208-5f00738bb2c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Intermediate Semi-Classical Class">
+                    </div>
+                    <div class="class-details">
+                        <h3>Intermediate Expressions</h3>
+                        <div class="class-info">
+                            <span><i class="far fa-clock"></i> 12 weeks</span>
+                            <span><i class="fas fa-user"></i> Small groups</span>
+                        </div>
+                        <p>Deepen your understanding of semi-classical dance with more complex choreography, intricate footwork, and enhanced emotional expression techniques.</p>
+                        <a href="#" class="class-cta">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="advanced">
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1583878548483-1b7db2cd9d84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Advanced Semi-Classical Class">
+                    </div>
+                    <div class="class-details">
+                        <h3>Advanced Performance Techniques</h3>
+                        <div class="class-info">
+                            <span><i class="far fa-clock"></i> 16 weeks</span>
+                            <span><i class="fas fa-user"></i> Personalized attention</span>
+                        </div>
+                        <p>Master the art of semi-classical dance with complex compositions, improvisation techniques, and stage performance skills for aspiring performers.</p>
+                        <a href="#" class="class-cta">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <div class="tab-content" id="workshops">
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1567942712661-82b9b407abbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Semi-Classical Workshop">
+                    </div>
+                    <div class="class-details">
+                        <h3>Weekend Intensive Workshops</h3>
+                        <div class="class-info">
+                            <span><i class="far fa-clock"></i> 2-3 days</span>
+                            <span><i class="fas fa-user"></i> All levels welcome</span>
+                        </div>
+                        <p>Join our intensive workshops focusing on specific aspects of semi-classical dance, from abhinaya (expressions) to complex rhythmic patterns.</p>
+                        <a href="#" class="class-cta">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-title">
+            <h2>What Our Students Say</h2>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The semi-classical classes at Relive have been transformative. I've not only learned beautiful dance forms but also connected with my cultural roots in a meaningful way.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Sharma">
+                        </div>
+                        <div class="author-details">
+                            <h4>Priya Sharma</h4>
+                            <p>Student for 2 years</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As a complete beginner, I was nervous about learning classical forms, but the instructors made it so accessible and enjoyable. I'm amazed at my progress!</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Neha Patel">
+                        </div>
+                        <div class="author-details">
+                            <h4>Neha Patel</h4>
+                            <p>Beginner Level Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The perfect balance of tradition and contemporary approach. The teachers are knowledgeable and passionate, making each class a wonderful experience.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul Verma">
+                        </div>
+                        <div class="author-details">
+                            <h4>Rahul Verma</h4>
+                            <p>Intermediate Level Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need prior dance experience to join semi-classical classes?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No prior experience is necessary! Our beginner classes are designed for those completely new to dance. We start with the fundamentals and gradually build up your skills.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What should I wear to semi-classical classes?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Comfortable clothing that allows free movement is recommended. Traditional Indian wear like salwar kameez or practice sari is encouraged but not mandatory. We suggest avoiding restrictive clothing.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How are semi-classical classes different from classical dance classes?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Semi-classical dance maintains the grace and technique of classical forms but incorporates contemporary elements, making it more accessible and adaptable to modern music. The rigid rules of classical dance are relaxed while preserving its essence.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is the typical class structure?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Classes typically begin with warm-up exercises, followed by technical practice of basic steps and mudras (hand gestures). The main portion focuses on learning choreography, and sessions end with cool-down exercises and practice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Begin Your Semi-Classical Journey Today</h2>
+            <p>Join us at Relive Dance & Fitness and discover the beautiful world of semi-classical dance. Experience the perfect blend of tradition and creativity.</p>
+            <a href="contact.html" class="cta-button">Book Your First Class</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Logo and About Section -->
+          <div class="footer-section">
+            <div class="footer-brand">
+              <img
+                src="./public/New_Logo__2_-removebg-preview.png"
+                alt="Relive Dance & Fitness"
+                class="footer-logo"
+              />
+            </div>
+            <p class="footer-about">
+              Empowering dancers of all levels to express themselves through
+              movement. Join our community and discover the joy of dance.
+            </p>
+            <div class="social-media">
+              <a
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+                class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/relive_danceandfitness/?igsh=MTA2ZHRhZThyYW5lMw%3D%3D#"
+                target="_blank"
+                aria-label="Instagram"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://youtube.com/@relivedanceandfitness479?si=TtNhZ-L85W6vYfJi"
+                target="_blank"
+                aria-label="YouTube"
+                class="social-link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="aboutpage.html" class="footer-link">About</a></li>
+              <li><a href="./InStudio Page.html" class="footer-link">Studio Classes</a></li>
+              <li>
+                <a href="./onlineturtorial.html" class="footer-link"
+                  >Online Classes</a
+                >
+              </li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Programs Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Programs</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="bollywood.html" class="footer-link">Bollywood Dance</a>
+              </li>
+              <li><a href="#" class="footer-link">Semi-Classical</a></li>
+              <li>
+                <a href="./Wedding.html" class="footer-link"
+                  >Sangeet By Ashwini</a
+                >
+              </li>
+              <li><a href="#" class="footer-link">Yoga Class</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Info</h4>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="contact-text">
+                  57/4, Sneh Sadan, Subhash Hotel lane, near J.B Nagar metro
+                  station, JB Nagar, Andheri East, Mumbai- 400059
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p class="contact-text">+91 8828571648</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p class="contact-text">relivedanceandfitness@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2025 Relive Dance & Fitness. All rights reserved.
+          </p>
+          <div class="legal-links">
+            <a href="#" class="legal-link">Privacy Policy</a>
+            <a href="#" class="legal-link">Terms of Service</a>
+            <a href="#" class="legal-link">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Pre-recorded Classes Floating Button -->
+    <a href="./Pre-recoded" class="prerecorded-float" aria-label="Pre-recorded classes">
+        <div class="star-text">What's New</div>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8828571648" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Chat with us</div>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+
+
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

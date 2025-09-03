@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bollywood Classes - Relive Dance & Fitness Studio</title>
+    <meta
+      name="description"
+      content="Discover our in-studio dance and fitness classes at Relive Dance & Fitness Studio in Mumbai. Professional training in Bollywood, Semi-Classical, Kids Dance, Yoga and more."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+
+    <style>
+      /* Bollywood Page Specific Styles */
+      :root {
+        --dark-bg: #1a1a2e;
+        --primary-gradient: linear-gradient(135deg, #ff4e8d, #9c27b0);
+        --secondary-gradient: linear-gradient(135deg, #9c27b0, #673ab7);
+        --text-light: #ffffff;
+        --text-muted: #cccccc;
+        --card-bg: #252547;
+        --card-hover: #2d2d5a;
+      }
+      
+      body {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+      }
+      
+      /* Hero Section */
+      .bollywood-hero {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.9)), 
+                    url('https://images.unsplash.com/photo-1547153760-73fcb3e85b3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+        padding: 100px 0 60px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+        z-index: 2;
+      }
+      
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Playfair', serif;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        color: var(--text-muted);
+      }
+      
+      .cta-button {
+        display: inline-block;
+        padding: 15px 40px;
+        background: var(--primary-gradient);
+        color: white;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+      }
+      
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(156, 39, 176, 0.6);
+      }
+      
+      /* New Content Section - Text Left, Image Right */
+      .content-section {
+        padding: 80px 0;
+        background: var(--dark-bg);
+      }
+      
+      .content-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+      
+      .content-text {
+        flex: 1;
+      }
+      
+      .content-image {
+        flex: 1;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      .content-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      
+      .content-image:hover img {
+        transform: scale(1.05);
+      }
+      
+      .content-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Playfair', serif;
+      }
+      
+      .content-description {
+        color: var(--text-muted);
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+      
+      /* Features Section */
+      .features-section {
+        padding: 80px 0;
+        background: var(--dark-bg);
+      }
+      
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Playfair', serif;
+      }
+      
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .feature-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-10px);
+        background: var(--card-hover);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .feature-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--text-light);
+      }
+      
+      .feature-description {
+        color: var(--text-muted);
+      }
+      
+      /* Classes Section */
+      .classes-section {
+        padding: 80px 0;
+        background: linear-gradient(to bottom, var(--dark-bg), #242439);
+      }
+      
+      .classes-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .class-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+      
+      .tab-button {
+        padding: 12px 30px;
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .tab-button::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background: var(--primary-gradient);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      
+      .tab-button.active {
+        color: var(--text-light);
+      }
+      
+      .tab-button.active::after,
+      .tab-button:hover::after {
+        width: 80%;
+      }
+      
+      .class-content {
+        display: none;
+      }
+      
+      .class-content.active {
+        display: block;
+      }
+      
+      .class-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      
+      .class-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+      
+      .class-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      .class-image {
+        height: 200px;
+        overflow: hidden;
+      }
+      
+      .class-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .class-card:hover .class-image img {
+        transform: scale(1.1);
+      }
+      
+      .class-info {
+        padding: 20px;
+      }
+      
+      .class-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: var(--text-light);
+      }
+      
+      .class-details {
+        color: var(--text-muted);
+        margin-bottom: 15px;
+      }
+      
+      .class-price {
+        font-size: 1.2rem;
+        font-weight: 600;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 15px;
+      }
+      
+      /* Testimonials Section */
+      .testimonials-section {
+        padding: 80px 0;
+        background: var(--dark-bg);
+      }
+      
+      .testimonials-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .testimonial-slider {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .testimonial {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: var(--text-light);
+      }
+      
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+      
+      .author-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+      }
+      
+      .author-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .author-details {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .author-name {
+        font-weight: 600;
+        color: var(--text-light);
+      }
+      
+      .author-role {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        padding: 100px 0;
+        text-align: center;
+        background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), 
+                    url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+      }
+      
+      .cta-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Playfair', serif;
+      }
+      
+      .cta-text {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        font-size: 1.1rem;
+        color: var(--text-muted);
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .content-container {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .content-image {
+          order: -1; /* Image first on mobile */
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+        
+        .content-title {
+          font-size: 2rem;
+        }
+        
+        .section-title {
+          font-size: 2rem;
+        }
+        
+        .feature-card, .class-card {
+          padding: 20px;
+        }
+        
+        .cta-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header & Navigation -->
+   <header class="header" id="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <img
+              src="./public/New_Logo__2_-removebg-preview.png"
+              alt="Relive Dance Academy Logo"
+            />
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./aboutpage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" >Studio Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="bollywood.html">Bollywood Dance</a>
+                <a href="Semi-classical.html">Semi-Classical Dance</a>
+                <a href="./Yoga.html">Yoga Class</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="./Pre-Recorded.html">Pre-recoded video</a>
+                <a href="./onlineturtorial.html">Zoom Online class</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./Wedding.html" class="nav-link">Sangeet By Ashwini</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Bollywood Hero Section -->
+    <section class="bollywood-hero">
+      <div class="hero-content" data-aos="fade-up">
+        <h1 class="hero-title">Bollywood Dance Classes</h1>
+        <p class="hero-subtitle">Express yourself through the vibrant and energetic world of Bollywood dance</p>
+        <a href="#classes" class="cta-button">Explore Classes</a>
+      </div>
+    </section>
+
+    <!-- New Content Section - Text Left, Image Right -->
+    <section class="content-section">
+      <div class="content-container">
+        <div class="content-text" data-aos="fade-right">
+          <h2 class="content-title">Experience the Magic of Bollywood Dance</h2>
+          <p class="content-description">
+            Bollywood dance is a vibrant fusion of various Indian classical, folk, and contemporary Western dance styles. 
+            It's characterized by its expressive storytelling, energetic movements, and colorful costumes that bring 
+            the magic of Indian cinema to life.
+          </p>
+          <p class="content-description">
+            At Relive Dance & Fitness, our Bollywood classes are designed to help you learn the signature moves and 
+            choreography from popular Bollywood films while getting a fantastic full-body workout. Whether you're a 
+            complete beginner or an experienced dancer, our classes will help you build confidence, improve coordination, 
+            and most importantly - have fun!
+          </p>
+          <a href="#classes" class="cta-button">View Class Schedule</a>
+        </div>
+        <div class="content-image" data-aos="fade-left" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Bollywood Dance Performance">
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <h2 class="section-title" data-aos="fade-up">Why Choose Our Bollywood Classes</h2>
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <h3 class="feature-title">Authentic Choreography</h3>
+          <p class="feature-description">Learn moves straight from Bollywood films with authentic choreography that captures the essence of Indian cinema.</p>
+        </div>
+        
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="feature-title">All Levels Welcome</h3>
+          <p class="feature-description">From beginners to advanced dancers, our classes are tailored to suit every skill level and age group.</p>
+        </div>
+        
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="feature-title">Fitness & Fun</h3>
+          <p class="feature-description">Burn calories while having fun! Bollywood dance is a great cardio workout that doesn't feel like exercise.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <h2 class="section-title" data-aos="fade-up">What Our Students Say</h2>
+      <div class="testimonials-container">
+        <div class="testimonial-slider">
+          <div class="testimonial" data-aos="fade-up">
+            <p class="testimonial-text">"I've been taking Bollywood classes at Relive for 6 months now, and it's been transformative! Not only have I lost weight, but I've gained so much confidence. Ashwini is an amazing instructor!"</p>
+            <div class="testimonial-author">
+              <div class="author-image">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Sharma">
+              </div>
+              <div class="author-details">
+                <span class="author-name">Priya Sharma</span>
+                <span class="author-role">Student for 6 months</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+            <p class="testimonial-text">"The energy in these classes is incredible! I look forward to every session. It's the perfect blend of workout and fun. Highly recommend to anyone wanting to try Bollywood dance."</p>
+            <div class="testimonial-author">
+              <div class="author-image">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Kapoor">
+              </div>
+              <div class="author-details">
+                <span class="author-name">Rahul Kapoor</span>
+                <span class="author-role">Student for 1 year</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2 class="cta-title" data-aos="fade-up">Ready to Dance?</h2>
+      <p class="cta-text" data-aos="fade-up" data-aos-delay="100">Join our vibrant community of Bollywood dance enthusiasts and experience the joy of movement. No prior experience needed - just bring your energy and enthusiasm!</p>
+      <a href="contact.html" class="cta-button" data-aos="fade-up" data-aos-delay="200">Book Your First Class</a>
+    </section>
+
+     <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Logo and About Section -->
+          <div class="footer-section">
+            <div class="footer-brand">
+              <img
+                src="./public/New_Logo__2_-removebg-preview.png"
+                alt="Relive Dance & Fitness"
+                class="footer-logo"
+              />
+            </div>
+            <p class="footer-about">
+              Empowering dancers of all levels to express themselves through
+              movement. Join our community and discover the joy of dance.
+            </p>
+            <div class="social-media">
+              <a
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+                class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/relive_danceandfitness/?igsh=MTA2ZHRhZThyYW5lMw%3D%3D#"
+                target="_blank"
+                aria-label="Instagram"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://youtube.com/@relivedanceandfitness479?si=TtNhZ-L85W6vYfJi"
+                target="_blank"
+                aria-label="YouTube"
+                class="social-link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="aboutpage.html" class="footer-link">About</a></li>
+              <li><a href="./InStudio Page.html" class="footer-link">Studio Classes</a></li>
+              <li>
+                <a href="./onlineturtorial.html" class="footer-link"
+                  >Online Classes</a
+                >
+              </li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Programs Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Programs</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="bollywood.html" class="footer-link">Bollywood Dance</a>
+              </li>
+              <li><a href="#" class="footer-link">Semi-Classical</a></li>
+              <li>
+                <a href="./Wedding.html" class="footer-link"
+                  >Sangeet By Ashwini</a
+                >
+              </li>
+              <li><a href="#" class="footer-link">Yoga Class</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Info</h4>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="contact-text">
+                  57/4, Sneh Sadan, Subhash Hotel lane, near J.B Nagar metro
+                  station, JB Nagar, Andheri East, Mumbai- 400059
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p class="contact-text">+91 8828571648</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p class="contact-text">relivedanceandfitness@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2025 Relive Dance & Fitness. All rights reserved.
+          </p>
+          <div class="legal-links">
+            <a href="#" class="legal-link">Privacy Policy</a>
+            <a href="#" class="legal-link">Terms of Service</a>
+            <a href="#" class="legal-link">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Pre-recorded Classes Floating Button -->
+    <a
+      href="./Pre-recoded"
+      class="prerecorded-float"
+      aria-label="Pre-recorded classes"
+    >
+      <div class="star-text">What's New</div>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/8828571648"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="Contact us on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <div class="whatsapp-tooltip">Chat with us</div>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script type="module" src="script.js"></script>
+    
+    <script>
+      // Initialize AOS animations
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 1000,
+          once: true,
+          offset: 100
+        });
+        
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.class-content');
+        
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            button.classList.add('active');
+            document.getElementById(`${tabId}-content`).classList.add('active');
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>

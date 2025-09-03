@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Recorded Video - Relive Dance & Fitness Studio</title>
+    <meta name="description" content="Discover the story behind Relive Dance & Fitness Studio - Where movement meets memory. Professional dance training in Mumbai.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    /* Color Variables */
+    :root {
+        --purple-primary: #9c27b0;
+        --purple-secondary: #7b1fa2;
+        --purple-light: #ba68c8;
+        --purple-dark: #6a1b9a;
+        --pink-primary: #e91e63;
+        --pink-secondary: #ad1457;
+        --text-light: #ffffff;
+        --text-dark: #333333;
+        --bg-dark: #121212;
+        --bg-darker: #0a0a0a;
+        --card-bg: #1e1e1e;
+        --border-color: #333333;
+        --gradient: linear-gradient(135deg, var(--purple-primary) 0%, var(--pink-primary) 100%);
+    }
+
+    /* Main Content Styles */
+    .main-content {
+        padding-top: 100px;
+        background: var(--bg-dark);
+        min-height: 100vh;
+        color: var(--text-light);
+    }
+
+    /* Hero Section */
+    .prerecorded-hero {
+        padding: 80px 0 60px;
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-darker);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .prerecorded-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient);
+        opacity: 0.1;
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'Playfair', serif;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: #cccccc;
+    }
+
+    /* Video Section */
+    .video-section {
+        padding: 80px 0;
+        background: var(--bg-dark);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .video-player {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border: 3px solid var(--purple-light);
+    }
+
+    .video-player video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .video-info {
+        text-align: center;
+        max-width: 600px;
+    }
+
+    .video-info h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'Playfair', serif;
+        color: var(--text-light);
+    }
+
+    .video-info p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        color: #bbbbbb;
+    }
+
+    .video-features {
+        list-style: none;
+        margin-bottom: 30px;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .video-features li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        color: #cccccc;
+    }
+
+    .video-features i {
+        color: var(--purple-light);
+        font-size: 1.3rem;
+        width: 25px;
+    }
+
+    .cta-button {
+        background: var(--gradient);
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Benefits Section */
+    .benefits-section {
+        padding: 80px 0;
+        background: var(--bg-darker);
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        font-family: 'Playfair', serif;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-header h2:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--purple-primary);
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .benefit-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        border: 1px solid var(--border-color);
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        border-color: var(--purple-light);
+    }
+
+    .benefit-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 2rem;
+    }
+
+    .benefit-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-family: 'Playfair', serif;
+    }
+
+    .benefit-card p {
+        color: #bbbbbb;
+        line-height: 1.6;
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+        padding: 80px 0;
+        background: var(--bg-dark);
+    }
+
+    .steps-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid var(--border-color);
+    }
+
+    .step-number {
+        min-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .step-content h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 10px;
+    }
+
+    .step-content p {
+        color: #bbbbbb;
+        line-height: 1.6;
+    }
+
+    /* Final CTA Section */
+    .final-cta {
+        padding: 100px 0;
+        background: linear-gradient(135deg, var(--purple-dark) 0%, var(--bg-darker) 100%);
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .final-cta:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+        background-size: cover;
+        opacity: 0.15;
+        z-index: 0;
+    }
+
+    .final-cta .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .final-cta h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        font-family: 'Playfair', serif;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .final-cta p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+        color: #dddddd;
+    }
+
+    /* Responsive Adjustments */
+    @media (min-width: 768px) {
+        .video-container {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-info {
+            text-align: left;
+        }
+        
+        .video-features {
+            text-align: left;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.2rem;
+        }
+        
+        .step {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .testimonial-author {
+            flex-direction: column;
+        }
+        
+        .author-info h4,
+        .author-info p {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .hero-content h1 {
+            font-size: 2rem;
+        }
+        
+        .section-header h2 {
+            font-size: 1.8rem;
+        }
+        
+        .benefits-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Header & Navigation -->
+     <header class="header" id="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <img
+              src="./public/New_Logo__2_-removebg-preview.png"
+              alt="Relive Dance Academy Logo"
+            />
+          </div>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./aboutpage.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" >Studio Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="bollywood.html">Bollywood Dance</a>
+                <a href="Semi-classical.html">Semi-Classical Dance</a>
+                <a href="./Yoga.html">Yoga Class</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="./Pre-Recorded.html">Pre-recoded video</a>
+                <a href="./onlineturtorial.html">Zoom Online class</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="./Wedding.html" class="nav-link">Sangeet By Ashwini</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="prerecorded-hero">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Pre-Recorded Dance Tutorials</h1>
+                <p>Learn at your own pace with our professionally crafted dance tutorials. Perfect for busy schedules or those who prefer to practice in their own space and time.</p>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video-section" class="video-section">
+            <div class="container">
+                <div class="video-container">
+                    <div class="video-player" data-aos="zoom-in">
+                        <!-- Replace with your actual video -->
+                        <video controls >
+                            <source src="./new images/Founder-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-info" data-aos="fade-left">
+                        <h2>Bollywood Dance Fundamentals</h2>
+                        <p>Our pre-recorded video tutorial covers the essential moves and techniques of Bollywood dance. Perfect for beginners or those looking to refine their skills.</p>
+                        
+                        <ul class="video-features">
+                            <li><i class="fas fa-check-circle"></i> 45 minutes of detailed instruction</li>
+                            <li><i class="fas fa-check-circle"></i> Step-by-step breakdown of moves</li>
+                            <li><i class="fas fa-check-circle"></i> Multiple camera angles</li>
+                            <li><i class="fas fa-check-circle"></i> Practice routines included</li>
+                            <li><i class="fas fa-check-circle"></i> Lifetime access</li>
+                        </ul>
+                        
+                        <a href="#" class="cta-button">
+                            <i class="fas fa-shopping-cart"></i> Get Access Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Why Choose Pre-Recorded Videos?</h2>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Learn Anytime</h3>
+                        <p>Access your videos 24/7 and practice at your convenience, regardless of your schedule or timezone.</p>
+                    </div>
+                    
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-icon">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <h3>Repeat & Master</h3>
+                        <p>Watch difficult sections as many times as needed until you've mastered the moves perfectly.</p>
+                    </div>
+                    
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Cost Effective</h3>
+                        <p>Get professional instruction at a fraction of the cost of live classes with lifetime access.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>How It Works</h2>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step" data-aos="fade-right" data-aos-delay="100">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Purchase & Access</h3>
+                            <p>Select the tutorial you want, complete your purchase, and get instant access to your personal dashboard.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-left" data-aos-delay="200">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Watch & Learn</h3>
+                            <p>Stream the video tutorials on any device - phone, tablet, or computer - at your convenience.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-right" data-aos-delay="300">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Practice & Perfect</h3>
+                            <p>Follow along with the instructions, pause when needed, and replay sections until you've mastered the moves.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <div class="container">
+                <div data-aos="fade-up">
+                    <h2>Start Your Dance Journey Today</h2>
+                    <p>Join hundreds of students who have transformed their dancing skills with our pre-recorded tutorials. Professional instruction, flexible learning, and incredible results.</p>
+                    <a href="#" class="cta-button">
+                        <i class="fas fa-shopping-cart"></i> Get Instant Access
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Logo and About Section -->
+          <div class="footer-section">
+            <div class="footer-brand">
+              <img
+                src="./public/New_Logo__2_-removebg-preview.png"
+                alt="Relive Dance & Fitness"
+                class="footer-logo"
+              />
+            </div>
+            <p class="footer-about">
+              Empowering dancers of all levels to express themselves through
+              movement. Join our community and discover the joy of dance.
+            </p>
+            <div class="social-media">
+              <a
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+                class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/relive_danceandfitness/?igsh=MTA2ZHRhZThyYW5lMw%3D%3D#"
+                target="_blank"
+                aria-label="Instagram"
+                class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://youtube.com/@relivedanceandfitness479?si=TtNhZ-L85W6vYfJi"
+                target="_blank"
+                aria-label="YouTube"
+                class="social-link"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="aboutpage.html" class="footer-link">About</a></li>
+              <li><a href="./InStudio Page.html" class="footer-link">Studio Classes</a></li>
+              <li>
+                <a href="./onlineturtorial.html" class="footer-link"
+                  >Online Classes</a
+                >
+              </li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Programs Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Programs</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="bollywood.html" class="footer-link">Bollywood Dance</a>
+              </li>
+              <li><a href="#" class="footer-link">Semi-Classical</a></li>
+              <li>
+                <a href="./Wedding.html" class="footer-link"
+                  >Sangeet By Ashwini</a
+                >
+              </li>
+              <li><a href="#" class="footer-link">Yoga Class</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Info</h4>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="contact-text">
+                  57/4, Sneh Sadan, Subhash Hotel lane, near J.B Nagar metro
+                  station, JB Nagar, Andheri East, Mumbai- 400059
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p class="contact-text">+91 8828571648</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p class="contact-text">relivedanceandfitness@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2025 Relive Dance & Fitness. All rights reserved.
+          </p>
+          <div class="legal-links">
+            <a href="#" class="legal-link">Privacy Policy</a>
+            <a href="#" class="legal-link">Terms of Service</a>
+            <a href="#" class="legal-link">Refund Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+     <!-- Pre-recorded Classes Floating Button -->
+    <a href="./Pre-recoded" class="prerecorded-float" aria-label="Pre-recorded classes">
+        <div class="star-text">What's New</div>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8828571648" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Chat with us</div>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script type="module" src="script.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+
+</body>
+</html>
