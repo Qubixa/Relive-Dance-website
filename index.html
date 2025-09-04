@@ -76,7 +76,7 @@
               <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i
               ></a>
               <div class="dropdown-content">
-                <a href="./Pre-Recorded.html">Pre-recoded video</a>
+                <a href="./Pre-Recorded.html">Pre-recoded Tutorials</a>
                 <a href="./onlineturtorial.html">Zoom Online class</a>
               </div>
             </li>
@@ -624,9 +624,30 @@ Deesha Parekh (Dee)</h3>
     </a>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-      <i class="fas fa-chevron-up"></i>
+     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
     </button>
+
+
+    <script>
+         const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+    </script>
+    
 
     <!-- EmailJS SDK -->
     <script

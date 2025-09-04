@@ -1,5 +1,5 @@
 /* About Page Styles */
-.about-hero {
+/* .about-hero {
     position: relative;
     height: 60vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
@@ -10,69 +10,40 @@
     text-align: center;
     color: white;
     margin-top: 80px;
-}
+} */
 
-.hero-overlay {
+/* .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, rgba(108, 99, 255, 0.3), rgba(255, 77, 137, 0.3));
-}
+} */
 
 
-.hero-title{
-     font-family: 'Brush Script MT', cursive;
-        font-size: 5rem;
-        font-weight: normal;
-        background: linear-gradient(90deg, #ff69b4, #8a2be2);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-align: center;
-        margin-bottom: 0.5rem;
+.hero-title {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 5rem;
+    font-weight: normal;
+    background: linear-gradient(90deg, #ff69b4, #8a2be2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .hero-subtext {
     font-family: 'Lucida Handwriting', cursive;
     font-size: 1.5rem;
-    font-weight: normal;
-    background: linear-gradient(90deg, #ff69b4, #800080); /* pink to purple */
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff69b4, #800080);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
 }
-
-
-/* .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 20px;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-family: 'Playfair', serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg, #ff4d89, #6c63ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-content .tagline {
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
-    font-family: 'Pacifico', cursive;
-} */
 
 /* Our Story Section */
 .our-story {
@@ -106,16 +77,16 @@
 }
 
 .story-text p {
-    font-size: 1.25rem; /* Increased font size */
-    font-weight: 500; /* Added boldness */
+    font-size: 1.25rem;
+    font-weight: 500;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9); /* Slightly brighter text */
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.5rem;
 }
 
 .highlight {
     color: #ff4d89;
-    font-weight: 600; /* Made bolder */
+    font-weight: 600;
     position: relative;
 }
 
@@ -231,7 +202,7 @@
 }
 
 .vision-box {
-   background-color: #0a0a0a;
+    background-color: #0a0a0a;
     border-radius: 15px;
     padding: 2rem;
     margin-top: 3rem;
@@ -253,7 +224,7 @@
 }
 
 .vision-title {
-    font-size: 2.0rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #ff4d89;
@@ -265,6 +236,8 @@
 .vision-title i {
     font-size: 1.5rem;
 }
+
+
 /* Founder Section */
 .founder-section {
     padding: 5rem 0;
@@ -404,7 +377,7 @@
 
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 15px;
@@ -480,59 +453,227 @@ progress::-webkit-progress-value {
     border-radius: 5px;
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    
+    .image-carousel {
+        height: 500px;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .hero-subtext {
+        font-size: 1.3rem;
+    }
+    
     .story-grid,
     .founder-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .story-images {
         order: -1;
     }
     
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .image-carousel {
+        height: 450px;
     }
     
-    .hero-content .tagline {
-        font-size: 1.2rem;
+    .story-text, .founder-info {
+        padding: 1.5rem;
+    }
+    
+    .story-text p {
+        font-size: 1.15rem;
+    }
+    
+    .founder-info p {
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 768px) {
-    .stats-container {
-        flex-direction: column;
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .about-hero {
+        height: 50vh;
+        min-height: 350px;
+        margin-top: 70px;
     }
     
-    .stat-item {
-        margin-bottom: 1rem;
+    .hero-title {
+        font-size: 3.5rem;
     }
     
-    .image-grid {
-        grid-template-columns: 1fr;
+    .hero-subtext {
+        font-size: 1.2rem;
+    }
+    
+    .our-story, .founder-section, .video-showcase {
+        padding: 4rem 0;
+    }
+    
+    .image-carousel {
+        height: 400px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .vision-box {
+        padding: 1.5rem;
+    }
+    
+    .vision-title {
+        font-size: 1.8rem;
     }
     
     .founder-quote {
-        padding: 1rem;
+        padding: 1.2rem;
     }
     
     .founder-quote i:first-child,
     .founder-quote i:last-child {
         font-size: 1.5rem;
     }
-}
-
-@media (max-width: 576px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .vision-content {
-        padding: 2rem 1rem;
-    }
     
     .founder-credentials {
         flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .credential {
+        width: 100%;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .about-hero {
+        height: 45vh;
+        min-height: 300px;
+    }
+    
+    .hero-title {
+               margin-top: 70px;
+        font-size: 3rem;
+    }
+    
+    .hero-subtext {
+        font-weight: 800;
+        font-size: 1.3rem;
+    }
+    
+    .our-story, .founder-section, .video-showcase {
+        padding: 3rem 0;
+    }
+    
+    .story-grid, .founder-content {
+        gap: 1.5rem;
+    }
+    
+    .story-text, .founder-info {
+        padding: 1rem;
+    }
+    
+    .story-text p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+    
+    .image-carousel {
+        height: 350px;
+    }
+    
+    .carousel-controls {
+        bottom: 15px;
+        gap: 15px;
+    }
+    
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .vision-box {
+        padding: 1.2rem;
+        margin-top: 2rem;
+    }
+    
+    .vision-title {
+        font-size: 1.6rem;
+    }
+    
+    .founder-info h3 {
+        font-size: 1.6rem;
+    }
+    
+    .founder-info p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .founder-quote {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .founder-quote p {
+        font-size: 1rem;
+    }
+    
+    .video-controls {
+        padding: 0.8rem;
+    }
+    
+    .control-btn {
+        font-size: 1rem;
+    }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 399.98px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtext {
+        font-size: 1rem;
+    }
+    
+    .image-carousel {
+        height: 300px;
+    }
+    
+    .carousel-controls {
+        gap: 10px;
+    }
+    
+    .carousel-btn {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
     }
 }
