@@ -568,12 +568,12 @@ progress::-webkit-progress-value {
     
     .hero-title {
                margin-top: 70px;
-        font-size: 3rem;
+        font-size: 3.3rem;
     }
     
     .hero-subtext {
-        font-weight: 800;
-        font-size: 1.3rem;
+        font-weight: 900;
+        font-size: 1.4rem;
     }
     
     .our-story, .founder-section, .video-showcase {
