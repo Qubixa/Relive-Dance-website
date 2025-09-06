@@ -428,53 +428,158 @@
         transform: scale(1.2);
     }
 
-    /* Testimonials Section - Dark Theme */
+    /* NEW: Testimonials Section - Elegant Design */
     .wedding-testimonials {
-        padding: 40px 0;
+        padding: 100px 0;
         background: var(--bg-darker);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .wedding-testimonials::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+        background-size: cover;
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    .testimonials-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonials-header {
         text-align: center;
-        color: white;
+        margin-bottom: 60px;
+    }
+
+    .testimonials-header h2 {
+           font-size: 1.5rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        /* font-family: 'Playfair', serif; */
+        position: relative;
+        display: inline-block;
+    }
+
+    .testimonials-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 3px;
+        background: linear-gradient(to right, transparent, rgba(250, 23, 244, 0.8), transparent);
+        border-radius: 3px;
+    }
+
+    .testimonials-header p {
+        font-size: 1.2rem;
+        color: #bbbbbb;
+        max-width: 700px;
+        margin: 30px auto 0;
+        line-height: 1.6;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
     }
 
     .testimonial-card {
-        background: var(--card-bg);
+        background: linear-gradient(145deg, #1a1a1a, #252525);
         border-radius: 15px;
         padding: 30px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        max-width: 800px;
-        margin: 0 auto;
         position: relative;
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(156, 39, 176, 0.2);
+        transition: all 0.4s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
-    .testimonial-card:before {
-        content: '"';
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        border-color: rgba(156, 39, 176, 0.4);
+    }
+
+    .testimonial-icon {
         position: absolute;
         top: 20px;
-        left: 30px;
-        font-size: 5rem;
-        color: rgba(156, 39, 176, 0.2);
-        font-family: serif;
-        line-height: 1;
+        right: 20px;
+        font-size: 24px;
+        color: var(--purple-light);
+        opacity: 0.3;
     }
 
     .testimonial-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #eeeeee;
         line-height: 1.8;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         font-style: italic;
+        position: relative;
+        z-index: 1;
+        flex-grow: 1;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--purple-primary), var(--purple-light));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    .author-info {
+        flex-grow: 1;
     }
 
     .author-info h4 {
         font-size: 1.2rem;
         color: white;
         margin-bottom: 5px;
+        font-weight: 600;
     }
 
     .author-info p {
-        color: #bbbbbb;
+        color: var(--purple-light);
         font-size: 0.9rem;
+        font-weight: 500;
+        margin: 0;
     }
 
     /* CTA Section - Dark Theme */
@@ -574,6 +679,10 @@
             height: 50px;
             font-size: 1.2rem;
         }
+
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 768px) {
@@ -616,6 +725,18 @@
         .next-arrow {
             right: 5px;
         }
+
+        .testimonial-card {
+            padding: 25px 20px;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2rem;
+        }
     }
 
     @media (max-width: 576px) {
@@ -635,6 +756,24 @@
             width: 40px;
             height: 40px;
             font-size: 1rem;
+        }
+
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .testimonials-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
         }
     }
 </style>
@@ -724,7 +863,7 @@
                             <li><i class="fas fa-check"></i> 1-5 sessions package</li>
                         </ul>
                         <!-- <span class="service-price">₹15,000</span> -->
-                        <button class="service-btn">Learn More</button>
+                        <button  class="service-btn">Start Planning</button>
                     </div>
                 </div>
 
@@ -743,7 +882,7 @@
                             <li><i class="fas fa-check"></i> 5-10 sessions package</li>
                         </ul>
                         <!-- <span class="service-price">₹25,000</span> -->
-                        <button class="service-btn">Learn More</button>
+                        <button class="service-btn">Start Planning</button>
                     </div>
                 </div>
 
@@ -762,7 +901,7 @@
                             <li><i class="fas fa-check"></i> 1-5 sessions package</li>
                         </ul>
                         <!-- <span class="service-price">₹18,000</span> -->
-                        <button class="service-btn">Learn More</button>
+                        <button class="service-btn">Start Planning</button>
                     </div>
                 </div>
             </div>
@@ -873,23 +1012,51 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- UPDATED: Testimonials Section -->
     <section class="wedding-testimonials">
-        <div class="container">
-            <div class="wedding-section-header" data-aos="fade-up">
+        <div class="testimonials-container">
+            <div class="testimonials-header" data-aos="fade-up">
                 <h2>Happy Couples</h2>
                 <p>What our couples say about their wedding dance experience</p>
             </div>
 
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                <p class="testimonial-text">Relive Dance Studio made our first dance absolutely magical! We had no dance experience but they created a beautiful, simple routine that looked stunning. Our guests thought we'd been taking lessons for months!</p>
-                <div class="testimonial-author">
-                    <!-- <div class="author-image">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Priya & Rohan">
-                    </div> -->
-                    <div class="author-info">
-                        <h4>Priya & Rohan</h4>
-                        <p>December 2023 Wedding</p>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="testimonial-icon fas fa-quote-right"></i>
+                    <p class="testimonial-text">My whole family Sangeet choreography done by Ashwini and team. The Choreography was super easy and comfortable. I am very much comfortable with her. The experience of song selection to till last day performance was super with her. I strongly recommend her for Sangeet choreography.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">HU</div>
+                        <div class="author-info">
+                            <h4>Hanuman Power Usha</h4>
+                            <p>Family Sangeet Performance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="testimonial-icon fas fa-quote-right"></i>
+                    <p class="testimonial-text">The wedding choreographer was incredible! She helped me choreograph my wedding sangeet in just one day and it turned out amazing. I'm so grateful for her talent and would definitely recommend her for any event.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PM</div>
+                        <div class="author-info">
+                            <h4>Prajakta Morrey</h4>
+                            <p>Wedding Sangeet Performance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="testimonial-icon fas fa-quote-right"></i>
+                    <p class="testimonial-text">Ashwini Ma'am choreographed our Sangeet couple dance and it was a great experience with them. They made the process easy and customized steps as per our comfort level. We enjoyed alot.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <h4>Surbhi Kothari</h4>
+                            <p>Couple Dance Performance</p>
+                        </div>
                     </div>
                 </div>
             </div>
