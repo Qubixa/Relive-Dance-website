@@ -196,7 +196,7 @@
           letter-spacing: 2px;
            text-transform: uppercase;
         font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         position: relative;
         display: inline-block;
       }
@@ -207,9 +207,9 @@
         bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
-        width: 60px;
+        width: 300px;
         height: 4px;
-        background: var(--gradient);
+       background: linear-gradient(to right, transparent, rgba(250, 23, 244, 0.8), transparent);
         border-radius: 2px;
       }
       
@@ -242,19 +242,23 @@
       }
       
       .pose-image {
-        height: 250px;
+        height: 400px; /* Increased height for posters */
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
       }
       
       .pose-image img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: fill; /* Changed to contain to show full poster */
         transition: transform 0.5s ease;
       }
       
       .pose-card:hover .pose-image img {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
       
       .pose-content {
@@ -293,7 +297,6 @@
         margin-right: 8px;
         font-size: 0.8rem;
       }
-      
       /* Schedule Section */
       .schedule-section {
         padding: 40px 20px;
@@ -578,7 +581,7 @@
         <!-- Halasana -->
         <div class="pose-card" data-aos="fade-up" data-aos-delay="100">
           <div class="pose-image">
-            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Halasana - Plow Pose">
+            <img src="./new images/halsanga yoga.jpg" alt="Halasana - Plow Pose">
           </div>
           <div class="pose-content">
             <h3>Halasana <span>The Plow Pose</span></h3>
@@ -597,7 +600,7 @@
         <!-- Bhujangasana -->
         <div class="pose-card" data-aos="fade-up" data-aos-delay="200">
          <div class="pose-image">
-  <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Bhujangasana - Cobra Pose">
+  <img src="./new images/BhujanGasna yoga.jpg" alt="Bhujangasana - Cobra Pose">
 </div>
 
           <div class="pose-content">
@@ -616,7 +619,7 @@
         <!-- Setu Bandhasana -->
         <div class="pose-card" data-aos="fade-up" data-aos-delay="300">
           <div class="pose-image">
-            <img src="https://images.unsplash.com/photo-1591886803270-5fb5e5e5ce2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Setu Bandhasana - Bridge Pose">
+            <img src="./new images/setu bandhasana.jpg" alt="Setu Bandhasana - Bridge Pose">
           </div>
           <div class="pose-content">
             <h3>Setu Bandhasana <span>Bridge Pose</span></h3>
@@ -635,7 +638,7 @@
     </section>
 
     <!-- Schedule Section -->
-    <section class="schedule-section" id="schedule">
+    <!-- <section class="schedule-section" id="schedule">
       <div class="section-title" data-aos="fade-up">
         <h2>Class Schedule</h2>
         <p>Join our regular yoga sessions at convenient timings</p>
@@ -672,7 +675,7 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Benefits Section -->
     <section class="benefits-section">

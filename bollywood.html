@@ -49,6 +49,28 @@
         font-family: 'Poppins', sans-serif;
         line-height: 1.6;
       }
+
+      
+      .section-title {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .section-title:after {
+        content: "";
+        display: block;
+        width:300px;
+        height: 3px;
+        background: linear-gradient(to right, transparent, rgba(250, 23, 244, 0.8), transparent);
+        margin: 15px auto 0;
+        border-radius: 2px;
+      }
+
       
       /* Poster Banner Section */
       .poster-banner {
@@ -363,7 +385,7 @@
 
     <!-- Features Section -->
     <section class="features-section" >
-      <h2 class="section-subtitle"  data-aos="fade-up">Why Choose Our Bollywood Classes</h2>
+      <h2 class="section-title"  data-aos="fade-up">Why Choose Our Bollywood Classes</h2>
       <div class="features-grid" style="padding: 20px;">
         <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
           <div class="feature-icon">
@@ -393,7 +415,7 @@
 
     <!-- Testimonials Section -->
     <section class="testimonials-section">
-      <h2 class="section-subtitle" data-aos="fade-up">What Our Students Say</h2>
+      <h2 class="section-title" data-aos="fade-up">What Our Students Say</h2>
       <div class="testimonials-container">
         <div class="testimonial" data-aos="fade-up">
           <p class="testimonial-text">"I've been taking Bollywood classes at Relive for 6 months now, and it's been transformative! Not only have I lost weight, but I've gained so much confidence. Ashwini is an amazing instructor!"</p>

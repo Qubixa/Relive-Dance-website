@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InStudio Classes - Relive Dance & Fitness Studio</title>
+    <title>Studio Classes - Relive Dance & Fitness Studio</title>
     <meta
       name="description"
       content="Discover our in-studio dance and fitness classes at Relive Dance & Fitness Studio in Mumbai. Professional training in Bollywood, Semi-Classical, Kids Dance, Yoga and more."
@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -27,13 +28,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+   <link rel="stylesheet" href="styles.css" />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css" />
-    <!-- <link rel="stylesheet" href="classses.css" /> -->
     <style>
       /* Hero Section */
-      .classes-hero {
+      /* .classes-hero {
         position: relative;
         height: 60vh;
         display: flex;
@@ -73,7 +73,7 @@
         font-weight: 300;
         margin-bottom: 2rem;
       }
-      
+       */
 
       /* Schedule Section */
       .schedule-section {
@@ -90,18 +90,20 @@
 
       .section-title {
         text-align: center;
-        font-size: 2.5rem;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 1.5rem;
         margin-bottom: 50px;
         position: relative;
-        color: #fff;
       }
 
       .section-title:after {
         content: "";
         display: block;
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+        width:300px;
+        height: 3px;
+        background: linear-gradient(to right, transparent, rgba(250, 23, 244, 0.8), transparent);
         margin: 15px auto 0;
         border-radius: 2px;
       }
@@ -128,8 +130,8 @@
 
       .schedule-tab:hover,
       .schedule-tab.active {
-        background: linear-gradient(90deg, #ff4d4d, #f9cb28);
-        color: #000;
+        background: linear-gradient(90deg, #ff4d8d, #7a2c9e);
+        color: #fff;
       }
 
       .schedule-content {
@@ -176,7 +178,7 @@
       }
 
       .class-name i {
-        color: #f9cb28;
+        color: #d83bd2;
       }
 
       .class-details {
@@ -195,7 +197,7 @@
       }
 
       .class-detail i {
-        color: #ff4d4d;
+        color: #ff4d8d;
         font-size: 0.9rem;
       }
 
@@ -212,7 +214,7 @@
       }
 
       .class-timing i {
-        color: #4dff4d;
+        color: #d83bd2;
       }
 
       .class-price {
@@ -223,12 +225,89 @@
       }
 
       .class-price span {
-        color: #f9cb28;
+        color: #d83bd2;
+      }
+
+      /* Special Offer Section - Matching the rectangle design */
+      .special-offer-container {
+        position: relative;
+        width: 100%;
+        height: 190px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(250, 23, 244, 0.3);
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+        margin: 40px auto 30px;
+        /* background: linear-gradient(135deg, #FA17F4, rgba(193, 155, 245, 0.8)); */
+      }
+
+      .special-offer-container:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 25px rgba(250, 23, 244, 0.5);
+        border: 2px solid #FA17F4;
+      }
+
+      .special-offer-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .special-offer-content h3 {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        z-index: 2;
+        text-align: center;
+        letter-spacing: 1px;
+        font-family: 'Dancing Script', cursive;
+        margin-bottom: 10px;
+      }
+
+      .special-offer-text {
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        z-index: 2;
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: 'Marcellus', serif;
+      }
+
+      .special-offer-underline {
+        width: 60%;
+        height: 2px;
+        background: linear-gradient(to right, transparent, #FA17F4, rgba(193, 155, 245, 0.8), transparent);
+        margin-top: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .special-offer-container:hover .special-offer-underline {
+        width: 80%;
+        background: linear-gradient(to right, transparent, #ffffff, #ffffff, transparent);
+      }
+
+      .special-offer-content::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FA17F4' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+        opacity: 0.6;
       }
 
       .note-box {
-        background: rgba(255, 77, 77, 0.1);
-        border-left: 4px solid #ff4d4d;
+        background: rgba(255, 77, 141, 0.1);
+        border-left: 4px solid #ff4d8d;
         padding: 15px;
         margin-top: 30px;
         border-radius: 0 8px 8px 0;
@@ -237,7 +316,7 @@
       .note-title {
         font-weight: 600;
         margin-bottom: 8px;
-        color: #ff4d4d;
+        color: #ff4d8d;
       }
 
       .note-text {
@@ -248,8 +327,8 @@
 
       .cta-button {
         display: inline-block;
-        background: linear-gradient(90deg, #ff4d4d, #f9cb28);
-        color: #000;
+        background: linear-gradient(90deg, #ff4d8d, #7a2c9e);
+        color: #fff;
         padding: 12px 30px;
         border-radius: 30px;
         font-weight: 600;
@@ -262,7 +341,7 @@
 
       .cta-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+        box-shadow: 0 10px 20px rgba(255, 77, 141, 0.3);
       }
 
       .venue-section {
@@ -274,7 +353,9 @@
       .venue-title {
         font-size: 1.8rem;
         margin-bottom: 20px;
-        color: #fff;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 2px;
+        text-transform: uppercase;
       }
 
       .venue-address {
@@ -295,8 +376,143 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       }
 
+      /* Programs Section */
+      .programs {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      }
+
+      .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .program-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .program-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .program-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .program-card:hover .program-image img {
+        transform: scale(1.1);
+      }
+
+      .program-content {
+        padding: 2rem;
+      }
+
+      .program-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #ffffff;
+      }
+
+      .program-description {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .program-features {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
+
+      .program-features li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 0.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+      }
+
+      .program-features i {
+        color: #ffffff;
+        font-size: 0.8rem;
+      }
+
+      .program-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .program-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .program-btn {
+        background: linear-gradient(135deg, #ff4d8d, #7a2c9e);
+        color: #ffffff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .program-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(255, 77, 141, 0.3);
+      }
+
       /* Responsive Styles */
+      @media (max-width: 992px) {
+        .classes-hero h1 {
+          font-size: 3rem;
+        }
+        
+        .classes-hero p {
+          font-size: 1.3rem;
+        }
+        
+        .section-title {
+          font-size: 1.8rem;
+        }
+        
+        .programs-grid {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .special-offer-content h3 {
+          font-size: 2.2rem;
+        }
+      }
+
       @media (max-width: 768px) {
+        .classes-hero {
+          height: 50vh;
+        }
+        
         .classes-hero h1 {
           font-size: 2.5rem;
         }
@@ -306,23 +522,39 @@
         }
 
         .section-title {
-          font-size: 2rem;
+          font-size: 1.5rem;
+        }
+        
+        .section-title:after {
+          width: 200px;
         }
 
         .class-name {
           font-size: 1.3rem;
         }
+        
+        .special-offer-content h3 {
+          font-size: 2rem;
+        }
+        
+        .special-offer-text {
+          font-size: 1.1rem;
+        }
+        
+        .special-offer-container {
+          height: 200px;
+        }
       }
 
-      @media (max-width: 480px) {
-        .classes-hero {
-          height: 50vh;
-        }
-
+      @media (max-width: 576px) {
         .classes-hero h1 {
           font-size: 2rem;
         }
-
+        
+        .classes-hero p {
+          font-size: 1rem;
+        }
+        
         .schedule-tab {
           padding: 10px 15px;
           font-size: 0.9rem;
@@ -331,146 +563,33 @@
         .schedule-card {
           padding: 20px;
         }
+        
+        .special-offer-content h3 {
+          font-size: 1.8rem;
+        }
+        
+        .special-offer-text {
+          font-size: 1rem;
+        }
+        
+        .special-offer-container {
+          height: 180px;
+        }
+        
+        .programs-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .program-title {
+          font-size: 1.3rem;
+        }
       }
-
-
-
-      .programs {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-}
-
-.programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
-.program-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-.program-image {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-}
-
-.program-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.program-card:hover .program-image img {
-    transform: scale(1.1);
-}
-
-.program-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.program-card:hover .program-overlay {
-    opacity: 1;
-}
-
-.program-overlay i {
-    font-size: 3rem;
-    color: #ffffff;
-}
-
-.program-content {
-    padding: 2rem;
-}
-
-.program-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.program-description {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-.program-features {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-.program-features li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-}
-
-.program-features i {
-    color: #ffffff;
-    font-size: 0.8rem;
-}
-
-.program-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.program-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.program-btn {
-    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
-    color: #000000;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.program-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-}
     </style>
   </head>
 
   <body>
     <!-- Header & Navigation -->
- <header class="header" id="header">
+    <header class="header" id="header">
       <nav class="nav">
         <div class="nav-container">
           <div class="nav-logo">
@@ -520,22 +639,12 @@
         </div>
       </nav>
     </header>
-    <!-- Hero Banner -->
-    <!-- <section class="classes-hero">
-        <div class="classes-hero-overlay"></div>
-        <div class="container">
-            <div data-aos="fade-up" data-aos-duration="800">
-                <h1>InStudio Classes</h1>
-                <p>Experience the joy of movement in our vibrant studio</p>
-            </div>
-        </div>
-    </section> -->
 
+    <!-- Programs Section -->
     <section id="programs" class="programs">
       <div class="container">
         <div class="section-header" style="margin-top: 50px" data-aos="fade-up">
-          <!-- <span class="section-subtitle">classes</span> -->
-          <h2 class="section-title">Instudio Classes</h2>
+          <h2 class="section-title">Studio Classes</h2>
           <p class="section-description">
             Discover your passion through our diverse range of dance styles,
             taught by world-class instructors in state-of-the-art facilities.
@@ -550,9 +659,6 @@
                 alt="Bollywood Dance"
                 loading="lazy"
               />
-              <div class="program-overlay">
-                <i class="fas fa-play"></i>
-              </div>
             </div>
             <div class="program-content">
               <h3 class="program-title">Bollywood Freestyle Dance</h3>
@@ -560,13 +666,7 @@
                 Learn Freestyle Bollywood dance moves with expressive
                 storytelling
               </p>
-              <!-- <ul class="program-features">
-                            <li><i class="fas fa-check"></i>Classical Indian dance elements</li>
-                            <li><i class="fas fa-check"></i>Expressive movements</li>
-                            <li><i class="fas fa-check"></i>Cultural storytelling</li>
-                        </ul> -->
               <div class="program-footer">
-                <!-- <span class="program-price">₹1,500/month</span> -->
                 <a href="./Bollywood.html" class="program-btn">Learn More</a>
               </div>
             </div>
@@ -579,9 +679,6 @@
                 alt="Semi-Classical Dance"
                 loading="lazy"
               />
-              <div class="program-overlay">
-                <i class="fas fa-play"></i>
-              </div>
             </div>
             <div class="program-content">
               <h3 class="program-title">Semi-Classical Dance</h3>
@@ -589,13 +686,7 @@
                 Semiclassical dance combines traditional dance with modern
                 styles and expression in a unique blend.
               </p>
-              <!-- <ul class="program-features">
-                            <li><i class="fas fa-check"></i>Classical foundations</li>
-                            <li><i class="fas fa-check"></i>Contemporary fusion</li>
-                            <li><i class="fas fa-check"></i>Graceful expressions</li>
-                        </ul> -->
               <div class="program-footer">
-                <!-- <span class="program-price">₹1,800/month</span> -->
                 <a href="./Semi-classical.html" class="program-btn">Learn More</a>
               </div>
             </div>
@@ -604,9 +695,6 @@
           <div class="program-card" data-aos="fade-up" data-aos-delay="400">
             <div class="program-image">
               <img src="./public/yoga.jpg" alt="Yoga Class" loading="lazy" />
-              <div class="program-overlay">
-                <i class="fas fa-play"></i>
-              </div>
             </div>
             <div class="program-content">
               <h3 class="program-title">Yoga Class</h3>
@@ -614,13 +702,7 @@
                 Find balance, flexibility, and inner peace through traditional
                 yoga practices
               </p>
-              <!-- <ul class="program-features">
-                            <li><i class="fas fa-check"></i>Hatha yoga asanas</li>
-                            <li><i class="fas fa-check"></i>Breathing techniques</li>
-                            <li><i class="fas fa-check"></i>Meditation practices</li>
-                        </ul> -->
               <div class="program-footer">
-                <!-- <span class="program-price">₹1,000/month</span> -->
                 <a href="./Yoga.html" class="program-btn">Learn More</a>
               </div>
             </div>
@@ -652,7 +734,6 @@
           data-aos="fade-up"
           data-aos-delay="200"
         >
-
           <div class="schedule-card">
             <h3 class="class-name"><i class="fas fa-spa"></i>Yoga Batch</h3>
             <div class="class-details">
@@ -660,10 +741,9 @@
                 <i class="fas fa-users"></i>
                 <span>All Levels Welcome</span>
               </div>
-             
             </div>
             <div>
-                 <div class="class-detail">
+              <div class="class-detail">
                 <i class="fas fa-calendar-alt"></i>
                 <span>Monday, Wednesday, Friday</span>
               </div>
@@ -671,8 +751,8 @@
                 ><i class="fas fa-clock"></i>10:00 AM - 11:00 AM</span
               >
             </div>
-             <div>
-                 <div class="class-detail">
+            <div>
+              <div class="class-detail">
                 <i class="fas fa-calendar-alt"></i>
                 <span>Tuesday, Thursday, Saturday</span>
               </div>
@@ -708,9 +788,6 @@
                 ><i class="fas fa-clock"></i>7:30 PM - 8:30 PM</span
               >
             </div>
-            <!-- <p class="class-price">
-              Price: <span>₹1,800/month (12 sessions)</span>
-            </p> -->
           </div>
         </div>
 
@@ -739,26 +816,29 @@
                 ><i class="fas fa-clock"></i>5:00 PM - 6:00 PM</span
               >
             </div>
-            <!-- <p class="class-price">
-              Price: <span>₹1,200/month (8 sessions)</span>
-            </p> -->
           </div>
         </div>
 
-        <div class="note-box" data-aos="fade-up" data-aos-delay="300">
-          <h4 class="note-title">Special Offer!</h4>
+        <!-- Special Offer Section with Rectangle Design -->
+        <div class="special-offer-container" data-aos="fade-up" data-aos-delay="300">
+          <div class="special-offer-content">
+            <h3>Special Offer!</h3>
+            <p class="special-offer-text">
+              Register for <strong>3 months</strong> and get <strong>1 month FREE</strong>!
+            </p>
+            <div class="special-offer-underline"></div>
+          </div>
+        </div>
+
+        <div class="note-box" data-aos="fade-up" data-aos-delay="400">
+          <h4 class="note-title">Important Note</h4>
           <p class="note-text">
-            Register for <strong>3 months</strong> and get
-            <strong>1 month FREE</strong>!
-          </p>
-          <p class="note-text">
-            <strong style="color: #f9cb28">Note:</strong> There is no refund
-            policy once you've paid fees. No carry forward of classes except in
+            There is no refund policy once you've paid fees. No carry forward of classes except in
             case of emergencies.
           </p>
         </div>
 
-        <div style="text-align: center" data-aos="fade-up" data-aos-delay="400">
+        <div style="text-align: center" data-aos="fade-up" data-aos-delay="500">
           <a href="https://wa.me/8828571648" class="cta-button">
             <i class="fab fa-whatsapp"></i> Book Your Free Demo
           </a>
@@ -794,15 +874,15 @@
     >
       <div class="container">
         <h3 style="
-     font-family: 'Lucida Handwriting', cursive;
-        font-size: 1.8rem;
-        font-weight: normal;
-        background: linear-gradient(90deg, #dda0dd, #6495ed);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-align: center;
-">Connect With Us</h3>
+          font-family: 'Lucida Handwriting', cursive;
+          font-size: 1.8rem;
+          font-weight: normal;
+          background: linear-gradient(90deg, #dda0dd, #6495ed);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-align: center;
+        ">Connect With Us</h3>
         <div style="display: flex; justify-content: center; gap: 20px">
           <a
             href="https://youtube.com/@relivedanceandfitness479?si=v_lr6q0Z-pwZh_JL"
@@ -831,7 +911,7 @@
       </div>
     </section>
 
-     <footer class="footer">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
           <!-- Logo and About Section -->
@@ -978,8 +1058,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Custom JavaScript -->
-    <script type="module" src="script.js"></script>
-
     <script>
       // Tab functionality
       document.addEventListener("DOMContentLoaded", function () {

@@ -17,85 +17,98 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
-</head>
+      <link rel="stylesheet" href="styles.css">
 
-<style>
-    /* Color Variables */
-    :root {
-        --purple-primary: #9c27b0;
-        --purple-secondary: #7b1fa2;
-        --purple-light: #ba68c8;
-        --purple-dark: #6a1b9a;
-        --pink-primary: #e91e63;
-        --pink-secondary: #ad1457;
-        --text-light: #ffffff;
-        --text-dark: #333333;
-        --bg-dark: #121212;
-        --bg-darker: #0a0a0a;
-        --card-bg: #1e1e1e;
-        --border-color: #333333;
-        --gradient: linear-gradient(135deg, var(--purple-primary) 0%, var(--pink-primary) 100%);
-    }
+    <style>
+        /* Color Variables */
+        :root {
+            --purple-primary: #9c27b0;
+            --purple-secondary: #7b1fa2;
+            --purple-light: #ba68c8;
+            --purple-dark: #6a1b9a;
+            --pink-primary: #e91e63;
+            --pink-secondary: #ad1457;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-dark: #121212;
+            --bg-darker: #0a0a0a;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --gradient: linear-gradient(135deg, var(--purple-primary) 0%, var(--pink-primary) 100%);
+        }
 
-    /* Main Content Styles */
-    .main-content {
-        padding-top: 100px;
-        background: var(--bg-dark);
-        min-height: 100vh;
-        color: var(--text-light);
-    }
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    /* Hero Section */
-    .prerecorded-hero {
-        padding: 80px 0 60px;
-        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-darker);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
+        /* Main Content Styles */
+        .main-content {
+            padding-top: 80px;
+            background: var(--bg-dark);
+            min-height: 100vh;
+            color: var(--text-light);
+        }
 
-    .prerecorded-hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--gradient);
-        opacity: 0.1;
-        z-index: 0;
-    }
+        /* Hero Section */
+        .prerecorded-hero {
+            padding: 60px 0 40px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-darker);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
+        .prerecorded-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.1;
+            z-index: 0;
+        }
 
-    .hero-content h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        font-family: 'Playfair', serif;
-        background: var(--gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .hero-content p {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        color: #cccccc;
-    }
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Playfair', serif;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    /* Video Section */
-    .video-section {
+        .hero-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        /* Video Section */
+     .video-section {
         padding: 80px 0;
         background: var(--bg-dark);
     }
@@ -108,28 +121,37 @@
 
     .video-container {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         gap: 40px;
     }
 
     .video-player {
-        width: 100%;
-        max-width: 400px;
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         border: 3px solid var(--purple-light);
+        position: relative;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
     }
 
     .video-player video {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: auto;
-        display: block;
+        height: 100%;
+        object-fit: cover;
     }
 
     .video-info {
-        text-align: center;
+        flex: 1;
+        min-width: 300px;
         max-width: 600px;
     }
 
@@ -152,7 +174,6 @@
         list-style: none;
         margin-bottom: 30px;
         text-align: left;
-        display: inline-block;
     }
 
     .video-features li {
@@ -209,7 +230,7 @@
        color: rgba(255, 255, 255, 0.7);
          letter-spacing: 2px;
           text-transform: uppercase;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         position: relative;
         display: inline-block;
     }
@@ -220,9 +241,9 @@
         bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
-        width: 80px;
+        width: 300px;
         height: 3px;
-        background: var(--purple-primary);
+        background: linear-gradient(to right, transparent, rgba(250, 23, 244, 0.8), transparent);
     }
 
     .benefits-grid {
@@ -274,206 +295,276 @@
         line-height: 1.6;
     }
 
-    /* How It Works Section */
-    .how-it-works {
-        padding: 80px 0;
-        background: var(--bg-dark);
-    }
+        /* How It Works Section */
+        .how-it-works {
+            padding: 60px 0;
+            background: var(--bg-dark);
+        }
 
-    .steps-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .step {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-        background: var(--card-bg);
-        padding: 25px;
-        border-radius: 15px;
-        border: 1px solid var(--border-color);
-    }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
 
-    .step-number {
-        min-width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--gradient);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    .step-content h3 {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: var(--text-light);
-        margin-bottom: 10px;
-    }
-
-    .step-content p {
-        color: #bbbbbb;
-        line-height: 1.6;
-    }
-
-    /* Final CTA Section */
-    .final-cta {
-        padding: 100px 0;
-        background: linear-gradient(135deg, var(--purple-dark) 0%, var(--bg-darker) 100%);
-        color: white;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .final-cta:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-        background-size: cover;
-        opacity: 0.15;
-        z-index: 0;
-    }
-
-    .final-cta .container {
-        position: relative;
-        z-index: 1;
-    }
-
-    .final-cta h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        font-family: 'Playfair', serif;
-        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    }
-
-    .final-cta p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto 30px;
-        line-height: 1.6;
-        color: #dddddd;
-    }
-
-    /* Responsive Adjustments */
-    @media (min-width: 768px) {
-        .video-container {
-            flex-direction: row;
+        .step-number {
+            min-width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
-        
-        .video-info {
-            text-align: left;
-        }
-        
-        .video-features {
-            text-align: left;
-        }
-    }
 
-    @media (max-width: 768px) {
-        .hero-content h1 {
-            font-size: 2.5rem;
+        .step-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 10px;
         }
-        
-        .section-header h2 {
-            font-size: 2.2rem;
-        }
-        
-        .step {
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .testimonial-author {
-            flex-direction: column;
-        }
-        
-        .author-info h4,
-        .author-info p {
-            text-align: center;
-        }
-    }
 
-    @media (max-width: 576px) {
-        .hero-content h1 {
+        .step-content p {
+            color: #bbbbbb;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 70px 0;
+            background: linear-gradient(135deg, var(--purple-dark) 0%, var(--bg-darker) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
             font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair', serif;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            color: #dddddd;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .main-content {
+                padding-top: 100px;
+            }
+            
+            .prerecorded-hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .video-section {
+                padding: 80px 0;
+            }
+            
+            .video-container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .video-info {
+                text-align: left;
+                max-width: 500px;
+            }
+            
+            .video-info h2 {
+                font-size: 2.2rem;
+            }
+            
+            .video-info p {
+                font-size: 1.1rem;
+            }
+            
+            .benefits-section {
+                padding: 80px 0;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .how-it-works {
+                padding: 80px 0;
+            }
+            
+            .steps-container {
+                gap: 40px;
+            }
+            
+            .step {
+                padding: 25px;
+            }
+            
+            .final-cta {
+                padding: 100px 0;
+            }
+            
+            .final-cta h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .video-player {
+                max-width: 100%;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .step-number {
+                margin: 0 auto;
+            }
+        }
+
+        /* Video Autoplay Overlay */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 10;
+            cursor: pointer;
         }
         
-        .section-header h2 {
-            font-size: 1.8rem;
+        .video-overlay i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--purple-light);
         }
         
-        .benefits-grid {
-            grid-template-columns: 1fr;
+        .video-overlay p {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 80%;
         }
-    }
-</style>
+        
+        .video-overlay.hidden {
+            display: none;
+        }
+    </style>
+</head>
 
 <body>
 
     <!-- Header & Navigation -->
-   <header class="header" id="header">
-      <nav class="nav">
-        <div class="nav-container">
-          <div class="nav-logo">
-            <img
-              src="./public/New_Logo__2_-removebg-preview.png"
-              alt="Relive Dance Academy Logo"
-            />
-          </div>
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="./public/New_Logo__2_-removebg-preview.png" alt="Relive Dance Academy Logo" />
+                </div>
 
-          <ul class="nav-menu" id="nav-menu">
-            <li class="nav-item">
-              <a href="./index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="./aboutpage.html" class="nav-link">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" >Studio Classes <i class="fas fa-chevron-down"></i
-              ></a>
-              <div class="dropdown-content">
-                <a href="bollywood.html">Bollywood Dance</a>
-                <a href="Semi-classical.html">Semi-Classical Dance</a>
-                <a href="./Yoga.html">Yoga Class</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i
-              ></a>
-              <div class="dropdown-content">
-                <a href="./Pre-Recorded.html">Pre-recoded Tutorials</a>
-                <a href="./onlineturtorial.html">Zoom Online class</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a href="./Wedding.html" class="nav-link">Sangeet By Ashwini</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact Us</a>
-            </li>
-          </ul>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./aboutpage.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link">Studio Classes <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="bollywood.html">Bollywood Dance</a>
+                            <a href="Semi-classical.html">Semi-Classical Dance</a>
+                            <a href="./Yoga.html">Yoga Class</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link">Online Classes <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="./Pre-Recorded.html">Pre-recoded Tutorials</a>
+                            <a href="./onlineturtorial.html">Zoom Online class</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./Wedding.html" class="nav-link">Sangeet By Ashwini</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
 
-          <div class="nav-toggle" id="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </nav>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- Main Content -->
@@ -487,7 +578,7 @@
         </section>
 
         <!-- Video Section -->
-        <section id="video-section" class="video-section">
+      <section id="video-section" class="video-section">
             <div class="container">
                 <div class="video-container">
                     <div class="video-player" data-aos="zoom-in">
@@ -553,6 +644,7 @@
             </div>
         </section>
 
+
         <!-- How It Works Section -->
         <section class="how-it-works">
             <div class="container">
@@ -588,8 +680,6 @@
             </div>
         </section>
 
-
-
         <!-- Final CTA Section -->
         <section class="final-cta">
             <div class="container">
@@ -606,116 +696,118 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-grid">
-          <!-- Logo and About Section -->
-          <div class="footer-section">
-            <div class="footer-brand">
-              <img
-                src="./public/New_Logo__2_-removebg-preview.png"
-                alt="Relive Dance & Fitness"
-                class="footer-logo"
-              />
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Logo and About Section -->
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img
+                            src="./public/New_Logo__2_-removebg-preview.png"
+                            alt="Relive Dance & Fitness"
+                            class="footer-logo"
+                        />
+                    </div>
+                    <p class="footer-about">
+                        Empowering dancers of all levels to express themselves through
+                        movement. Join our community and discover the joy of dance.
+                    </p>
+                    <div class="social-media">
+                        <a
+                            href="#"
+                            target="_blank"
+                            aria-label="Facebook"
+                            class="social-link"
+                            ><i class="fab fa-facebook-f"></i
+                        ></a>
+                        <a
+                            href="https://www.instagram.com/relive_danceandfitness/?igsh=MTA2ZHRhZThyYW5lMw%3D%3D#"
+                            target="_blank"
+                            aria-label="Instagram"
+                            class="social-link"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                        <a
+                            href="https://youtube.com/@relivedanceandfitness479?si=TtNhZ-L85W6vYfJi"
+                            target="_blank"
+                            aria-label="YouTube"
+                            class="social-link"
+                            ><i class="fab fa-youtube"></i
+                        ></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="aboutpage.html" class="footer-link">About</a></li>
+                        <li><a href="./InStudio Page.html" class="footer-link">Studio Classes</a></li>
+                        <li>
+                            <a href="./onlineturtorial.html" class="footer-link"
+                            >Online Classes</a
+                            >
+                        </li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Programs Section -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">Programs</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="bollywood.html" class="footer-link">Bollywood Dance</a>
+                        </li>
+                        <li><a href="#" class="footer-link">Semi-Classical</a></li>
+                        <li>
+                            <a href="./Wedding.html" class="footer-link"
+                            >Sangeet By Ashwini</a
+                            >
+                        </li>
+                        <li><a href="#" class="footer-link">Yoga Class</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p class="contact-text">
+                                57/4, Sneh Sadan, Subhash Hotel lane, near J.B Nagar metro
+                                station, JB Nagar, Andheri East, Mumbai- 400059
+                            </p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p class="contact-text">+91 8828571648</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p class="contact-text">relivedanceandfitness@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="footer-about">
-              Empowering dancers of all levels to express themselves through
-              movement. Join our community and discover the joy of dance.
-            </p>
-            <div class="social-media">
-              <a
-                href="#"
-                target="_blank"
-                aria-label="Facebook"
-                class="social-link"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/relive_danceandfitness/?igsh=MTA2ZHRhZThyYW5lMw%3D%3D#"
-                target="_blank"
-                aria-label="Instagram"
-                class="social-link"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a
-                href="https://youtube.com/@relivedanceandfitness479?si=TtNhZ-L85W6vYfJi"
-                target="_blank"
-                aria-label="YouTube"
-                class="social-link"
-                ><i class="fab fa-youtube"></i
-              ></a>
-            </div>
-          </div>
 
-          <!-- Quick Links Section -->
-          <div class="footer-section">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="index.html" class="footer-link">Home</a></li>
-              <li><a href="aboutpage.html" class="footer-link">About</a></li>
-              <li><a href="./InStudio Page.html" class="footer-link">Studio Classes</a></li>
-              <li>
-                <a href="./onlineturtorial.html" class="footer-link"
-                  >Online Classes</a
-                >
-              </li>
-              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <!-- Programs Section -->
-          <div class="footer-section">
-            <h4 class="footer-heading">Programs</h4>
-            <ul class="footer-links">
-              <li>
-                <a href="bollywood.html" class="footer-link">Bollywood Dance</a>
-              </li>
-              <li><a href="#" class="footer-link">Semi-Classical</a></li>
-              <li>
-                <a href="./Wedding.html" class="footer-link"
-                  >Sangeet By Ashwini</a
-                >
-              </li>
-              <li><a href="#" class="footer-link">Yoga Class</a></li>
-            </ul>
-          </div>
-
-          <!-- Contact Section -->
-          <div class="footer-section">
-            <h4 class="footer-heading">Contact Info</h4>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <p class="contact-text">
-                  57/4, Sneh Sadan, Subhash Hotel lane, near J.B Nagar metro
-                  station, JB Nagar, Andheri East, Mumbai- 400059
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 Relive Dance & Fitness. All rights reserved.
                 </p>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <p class="contact-text">+91 8828571648</p>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <p class="contact-text">relivedanceandfitness@gmail.com</p>
-              </div>
+                <div class="legal-links">
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="#" class="legal-link">Terms of Service</a>
+                    <a href="#" class="legal-link">Refund Policy</a>
+                </div>
             </div>
-          </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <p class="copyright">
-            &copy; 2025 Relive Dance & Fitness. All rights reserved.
-          </p>
-          <div class="legal-links">
-            <a href="#" class="legal-link">Privacy Policy</a>
-            <a href="#" class="legal-link">Terms of Service</a>
-            <a href="#" class="legal-link">Refund Policy</a>
-          </div>
-        </div>
-      </div>
     </footer>
-     <!-- Pre-recorded Classes Floating Button -->
+
+    <!-- AOS Animation Library -->
+   <!-- Pre-recorded Classes Floating Button -->
     <a href="./Pre-recoded" class="prerecorded-float" aria-label="Pre-recorded classes">
         <div class="star-text">What's New</div>
     </a>
@@ -739,15 +831,34 @@
 
     <!-- Custom JavaScript -->
     <script type="module" src="script.js"></script>
-    
-    <script>
+
+   <script>
         // Initialize AOS
         AOS.init({
             duration: 1000,
             once: true,
             offset: 100
         });
+        
+        // Video autoplay when in viewport
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('video');
+            
+            // Set up intersection observer to play video when in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(video);
+        });
     </script>
+
 
 </body>
 </html>
